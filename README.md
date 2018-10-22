@@ -8,6 +8,20 @@
 - The purpose of this app is to show effective api usage of recipe look up to generate useful information for base. The primary feature of this app will be the user interface, which should be simple, engaging, and encouraging for users to interface with. For this reason Users will always see one main feature on the page that will take up the whole screen. 
 - Users will additionally see an expandable menu that allows them to redirect to a sign-in page, an account settings page, a recipe index page, a recipe show page, and a recipe search page.
 
+## React Component Hierarchy
+
+* `App`
+* `Root`
+*  `/IngredientsForm`
+    * `IngredientsFormContainer`
+    * `IngredientsForm`
+* `/Recipes`
+    * `SearchResultsContainer`
+    * `SearchResuts`
+    * `SearchResultsItem`
+    * `RecipeDetailContainer`
+    * `RecipeDetail`
+
 
 ## `Functionality and MVP`  
 - splash, get started
@@ -75,8 +89,22 @@
 
 
 
-## Additional Information
 
+## Templates
+### Ingredients Form
+- ![ingredientsForm](./kitchen_app_wireframes/IngredientsForm.png)
+
+### Kitchen App Splash Page
+- ![Splash Page](./kitchen_app_wireframes/KitchenAppSplashPage.png)
+
+### Recipe Search Results (index page)
+- ![Recipe Search Results](./kitchen_app_wireframes/RecipeSearchResults.png)
+
+### Recipe Show Page
+- ![Recipe Show Page](./kitchen_app_wireframes/RecipeShowPage.png)
+
+
+## Additional Information
 ---------------------------------------
 Voice-Interactive
 ---------------------------------------
