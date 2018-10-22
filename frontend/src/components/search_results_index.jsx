@@ -7,14 +7,13 @@ class SearchResultsIndex extends React.Component {
     }
 
     render() {
-      const { recipes } this.props;
+      const { recipes } = this.props;
 
       return (
         <section>
-          <Route
-            path="/results/:recipeId"
-            component={SearchResultsIndexItem}
-          />
+          <ul>
+            {recipes.map(recipe => <SearchResultsIndexItem key={recipe.id} recipe={recipe} />)}
+          </ul>
         </section>
       );
     }
