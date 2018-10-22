@@ -1,6 +1,6 @@
 # Project Proposal
 ## MERN Flex Project
-### Amanda Mitchel, Nathasha Surendan, Chris Yip, Luke Dreyer
+### Amanda Mitchel, Nathasha Surendran, Chris Yip, Luke Dreyer
 
 
 ## `Background and Overview`  
