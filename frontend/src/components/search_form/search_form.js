@@ -1,6 +1,5 @@
 import React from "react";
-import { View, Text, TextInput, Button } from "react-native";
-import styles from "../../styles/styles";
+// import { View, Text, TextInput, Button } from "react-native";
 
 class Auth extends React.Component {
   constructor(props) {
@@ -14,22 +13,22 @@ class Auth extends React.Component {
   render() {
     const { errors } = this.props;
     return (
-      <View>
-        <TextInput
-          style={styles.input}
+      <div>
+        <input
+          type="text"
           placeholder="ingredient"
-          onChangeText={ingredient => this.setState({ ingredient })}
+          onChange={ingredient => this.setState({ ingredient })}
         />
 
-        <View style={styles.row}>
-         <Button title="Search" onPress={() => this.props.fetchRecipes(this.state.ingredient)} />
-        </View>
+      <div>
+         <button title="Search" onPress={() => this.props.fetchRecipes(this.state.ingredient)} />
+        </div>
 
-        <View style={styles.error}>
-          {errors.length ? <Text>{errors.join(" ")}</Text> : null}
-        </View>
+        <div>
+          {errors && errors.length ? <div>{errors.join(" ")}</div> : null}
+        </div>
 
-      </View>
+      </div>
     );
 }
 }
