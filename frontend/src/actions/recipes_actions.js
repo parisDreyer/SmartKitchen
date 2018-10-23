@@ -13,5 +13,5 @@ export const fetchRecipes = (ingredient) => dispatch => (
 
 export const receiveRecipes = (recipes) => ({
     type: FETCH_RECIPES,
-    recipes: recipes.hits
+    recipes: JSON.parse(recipes.request.response).hits
 });
