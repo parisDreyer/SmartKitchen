@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Dictaphone from './components/dictaphone.jsx';
-
+import SearchIndexContainer from './components/recipes/search_results_index_container';
 class App extends Component {
   render() {
     return (
@@ -12,6 +12,7 @@ class App extends Component {
         </header>
         hi
         <Dictaphone />
+        <SearchIndexContainer />
       </div>
     );
   }
