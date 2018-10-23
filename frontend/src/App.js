@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import './css/reset.css';
 import './css/App.css';
 import { Provider} from 'react-redux';
 import Dictaphone from './components/dictaphone.jsx';
