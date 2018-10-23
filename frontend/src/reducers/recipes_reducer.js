@@ -6,7 +6,7 @@ const recipesReducer = (state = {}, action) => {
 
     switch (action.type) {
         case FETCH_RECIPES:
-            newState = Object.assign({}, action.recipes);
+            let newState = Object.assign({}, action.recipes);
             return merge({}, newState);
         default:
             return state;
