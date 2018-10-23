@@ -1,5 +1,5 @@
 html, body, header, nav, h1, h2, h3, ul, li,
-main, button, section, img, div, p, form, label,
+main, button, section, img, div, p, a, form, label,
 input, textarea, span, footer {
   margin: 0;
   padding: 0;
@@ -13,6 +13,14 @@ input, textarea, span, footer {
   box-sizing: inherit;
   background: transparent;
 }
+
+body {
+  font-family: Istok Web;
+  color: #31017a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 
 header, nav, main, section,
 footer {
