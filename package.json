@@ -10,7 +10,7 @@
     "server": "nodemon app.js",
     "webpack": "webpack --watch",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "start": "npm-run-all --parallel server webpack"
+    "start": "concurrently npm-run-all --parallel server webpack"
   },
   "author": "",
   "license": "ISC",
