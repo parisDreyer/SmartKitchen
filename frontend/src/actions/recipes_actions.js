@@ -6,9 +6,8 @@ export const FETCH_RECIPES = 'FETCH_RECIPES';
 
 
 export const fetchRecipes = (ingredient) => dispatch => (
-    APIUtil.fetchRecipes(ingredient).then(recipes => (dispatch(receiveRecipes(recipes)))
-
-    ));
+  APIUtil.fetchRecipes(ingredient).then(recipes => (dispatch(receiveRecipes(recipes)))
+));
 
 
 
