@@ -1,0 +1,22 @@
+header {
+  background-color: #4286f4;
+  height: 60px;
+  vertical-align: center;
+}
+
+.nav-bar {
+  margin: auto;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  background-color: #4286f4;
+}
+
+.nav-link {
+  padding: 12px;
+  text-align: center;
+  font-size: 25px;
+  background-color: #31017a;
+  color: #f0f720;
+}
