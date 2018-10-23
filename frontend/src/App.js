@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './css/App.css';
 import { Provider} from 'react-redux';
 import Dictaphone from './components/dictaphone.jsx';
+import NavBar from './components/nav_bar/nav_bar';
 import SearchIndexContainer from './components/recipes/search_results_index_container';
 import ConfigureStore from "./store/store";
 import SignupFormContainer from "./components/session_form/signup_form_container";
@@ -34,7 +35,10 @@ const store = ConfigureStore();
 const App = () => {
   return (
     <div className="App">
-        <Dictaphone />
+        <header>
+          <NavBar />
+          <Dictaphone />
+        </header>
         <Switch>
           <Route path="/signup" component={SignupFormContainer}/>
           <Route path="/search" component={SearchContainer}/>
