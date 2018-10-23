@@ -11,6 +11,7 @@ class SearchForm extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+
   handleClick(){
     this.props.processForm(this.state.ingredient);
   }
@@ -22,7 +23,7 @@ class SearchForm extends React.Component {
         <input
           type="text"
           placeholder="ingredient"
-          onChange={ingredient => this.setState({ ingredient })}
+          onChange={e => this.setState({ ["ingredient"]: e.target.value })}
         />
 
       <div>
