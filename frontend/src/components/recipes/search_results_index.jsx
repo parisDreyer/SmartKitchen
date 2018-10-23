@@ -13,6 +13,7 @@ class SearchResultsIndex extends React.Component {
 
       return (
         <section>
+          <h1>Choose a yummy recipe and get cooking!</h1>
           <ul>
             {recipes.map(recipe => <SearchResultsIndexItem key={recipe.id} recipe={recipe} />)}
           </ul>

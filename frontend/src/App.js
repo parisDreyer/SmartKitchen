@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
 import { Provider} from 'react-redux';
 import Dictaphone from './components/dictaphone.jsx';
 import SearchIndexContainer from './components/recipes/search_results_index_container';
