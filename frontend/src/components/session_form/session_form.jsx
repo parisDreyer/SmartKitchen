@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
-import styles from '../../styles/styles';
+// import { View, Text, TextInput, Button } from 'react-native';
+
 
 class Auth extends React.Component {
     constructor(props) {
@@ -15,28 +15,28 @@ class Auth extends React.Component {
     render() {
         const { login, createUser, errors } = this.props;
         return (
-            <View>
-                <TextInput
-                    style={styles.input}
+            <div>
+                <input
+                  type="text"
                     placeholder="email"
-                    onChangeText={email => this.setState({ email })}
+                    onChange={email => this.setState({ email })}
                 />
-                <TextInput
-                    style={styles.input}
+              <input
+                    type="text"
                     secureTextEntry
                     placeholder="password"
-                    onChangeText={password => this.setState({ password })}
+                    onChange={password => this.setState({ password })}
                 />
 
-                <View style={styles.row}>
-                    <Button title="Log In" onPress={() => login(this.state)} />
-                    <Button title="Sign Up" onPress={() => createUser(this.state)} />
-                </View>
+              <div>
+                    <button title="Log In" onPress={() => login(this.state)} />
+                    <button title="Sign Up" onPress={() => createUser(this.state)} />
+                </div>
 
-                <View style={styles.error}>
-                    {errors.length ? <Text>{errors.join(' ')}</Text> : null}
-                </View>
-            </View>
+                <div>
+                    {errors.length ? <div>{errors.join(' ')}</div> : null}
+                </div>
+            </div>
         );
     }
 }

@@ -5,12 +5,22 @@ import { Provider} from 'react-redux';
 import Dictaphone from './components/dictaphone.jsx';
 import SearchIndexContainer from './components/recipes/search_results_index_container';
 import ConfigureStore from "./store/store";
+import SignupFormContainer from "./components/session_form/signup_form_container";
+import SearchContainer from "./components/search_form/search_form_container";
+import {
+  Route,
+  Redirect,
+  Switch,
+  Link,
+  HashRouter
+} from 'react-router-dom';
+
+
+
 const store = ConfigureStore();
-
-
 // need to get this working from the example at
 // https://github.com/znrm/typedraw/blob/master/src/App.js
-// for frontend auth 
+// for frontend auth
 //--------------------------
 // const checkForCurrentUser = async () => {
 //   const token = await getAuthToken();
@@ -22,20 +32,26 @@ const store = ConfigureStore();
 
 
 const App = () => {
-  return (<div className="App">
-        <header className="App-header">Learn React</header>
-        
-          hi
-          <Dictaphone />
-          <SearchIndexContainer />
-        
-  </div>);
+  return (
+    <div className="App">
+        <Dictaphone />
+        <Switch>
+          <Route path="/signup" component={SignupFormContainer}/>
+          <Route path="/search" component={SearchContainer}/>
+          <Route path="/index" component={SearchIndexContainer}/>
+          <Redirect to="/" />
+        </Switch>
+    </div>);
 }
 
+// hi
+// <SearchIndexContainer />
 
 const AppContainer = () => {
   return (<Provider store={store}>
+    <HashRouter>
     <App store={store} />
+    </HashRouter>
   </Provider>);
 }
 
