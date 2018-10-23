@@ -1,9 +1,11 @@
 import React from 'react';
 import { Route } from "react-router-dom";
 
+import SearchResultsIndexItem from './search_results_index_item';
+
 class SearchResultsIndex extends React.Component {
     componentDidMount() {
-
+      this.props.fetchRecipes();
     }
 
     render() {
