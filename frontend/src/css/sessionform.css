@@ -1,0 +1,65 @@
+.body{
+    height: 100%;
+    width: 100%;
+}
+
+.loginFormContainer{
+    background: #E8F0FD;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 300px;
+    align-self: center;
+    margin: auto;
+}
+
+
+
+.loginFormContainer input{
+    display: flex;
+  margin: auto;
+  width:50%;
+  height:3px;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 5%;
+  margin-top: 1px;
+
+}
+
+.loginFormContainer label{
+    margin-top: 2%;
+    margin-left:22%;
+    color: black; 
+    margin-bottom: 1%;
+    text-align: left;
+}
+
+.loginFormContainer button{
+  width:30%;
+  border: 1px solid #0E6ACB;
+  border-radius: 4px;
+  height: 7vh;
+  color: #0E6ACB;
+  background: white;
+  font-size: 17px;
+}
+
+button:hover { 
+    background-color: #0E6ACB;
+    color: white;
+}
+
+.submit{
+    display: flex;
+    justify-content: space-evenly;
+      margin-left: 15%;
+}
+
+.demo{
+    border: none;
+    color: #0E6ACB;
+    cursor: pointer;
+    padding-top: 10px;
+}
+

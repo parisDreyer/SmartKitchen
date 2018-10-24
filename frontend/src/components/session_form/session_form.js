@@ -1,5 +1,6 @@
 import React from 'react';
 // import { View, Text, TextInput, Button } from 'react-native';
+import "../../css/sessionform.css";
 
 
 class SessionForm extends React.Component {
@@ -14,6 +15,7 @@ class SessionForm extends React.Component {
         this.handleSignup = this.handleSignup.bind(this);
     }
 
+<<<<<<< HEAD:frontend/src/components/session_form/session_form.js
     handleLogin(){
       this.props.login(this.state);
     }
@@ -21,9 +23,38 @@ class SessionForm extends React.Component {
     handleSignup(){
       this.props.createUser(this.state);
     }
+=======
+    handleDemo() {
+        return (e) => {
+            e.preventDefault();
+            this.props.demoLogin();
+        };
+    }
+
+>>>>>>> csslogin:frontend/src/components/session_form/session_form.jsx
     render() {
         const { login, createUser, errors } = this.props;
-        return (
+        return <div className="loginFormContainer">
+            <label className="loginlabel">Email:</label>
+            <input type="text" placeholder="email" onChange={email => this.setState(
+                  { email }
+                )} />
+
+            <label className="loginlabel">Password:</label>
+            <input type="text" secureTextEntry placeholder="password" onChange={password => this.setState(
+                  { password }
+                )} />
+
+            <div className="submit">
+              <button onPress={() => login(this.state)}>Login</button>
+              <button onPress={() => createUser(this.state)}>
+                Sign Up
+              </button>
+              <span className="demo" onPress={this.handleDemo()}>
+                Demo
+              </span>
+            </div>
+
             <div>
                 <input
                   type="text"
@@ -44,8 +75,7 @@ class SessionForm extends React.Component {
                 <div>
                     {errors.length ? <div>{errors.join(' ')}</div> : null}
                 </div>
-            </div>
-        );
+          </div>;
     }
 }
 
