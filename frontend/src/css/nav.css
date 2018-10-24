@@ -1,3 +1,4 @@
+
 header {
   background-color: #4286f4;
   height: 60px;
@@ -15,8 +16,12 @@ header {
 
 .nav-link {
   padding: 12px;
-  text-align: center;
+  margin: 10px;
   font-size: 25px;
   background-color: #31017a;
   color: #f0f720;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

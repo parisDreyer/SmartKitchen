@@ -34,7 +34,8 @@ class SessionForm extends React.Component {
 
     render() {
         const { login, createUser, errors } = this.props;
-        return <div className="loginFormContainer">
+        return (
+        <div className="loginFormContainer">
             <label className="loginlabel">Email:</label>
             <input type="text" placeholder="email" onChange={email => this.setState(
                   { email }
@@ -75,7 +76,9 @@ class SessionForm extends React.Component {
                 <div>
                     {errors.length ? <div>{errors.join(' ')}</div> : null}
                 </div>
-          </div>;
+          </div>
+          </div>
+          );
     }
 }
 
