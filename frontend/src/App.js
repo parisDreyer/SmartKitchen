@@ -5,6 +5,7 @@ import './css/App.css';
 import { Provider} from 'react-redux';
 import Dictaphone from './components/dictaphone.jsx';
 import NavBar from './components/nav_bar/nav_bar';
+import Home from './components/home';
 import SearchIndexContainer from './components/recipes/search_results_index_container';
 import ConfigureStore from "./store/store";
 import SignupFormContainer from "./components/session_form/signup_form_container";
@@ -41,6 +42,7 @@ const App = () => {
           <Dictaphone />
         </header>
         <Switch>
+          <Route exact path="/" component={Home} />
           <Route path="/signup" component={SignupFormContainer}/>
           <Route path="/search" component={SearchContainer}/>
           <Route path="/index" component={SearchIndexContainer}/>
