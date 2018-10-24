@@ -55,28 +55,29 @@ class SessionForm extends React.Component {
               </span>
             </div>
 
-            <div>
-                <input
-                  type="text"
-                    placeholder="email"
-                    onChange={email => this.setState({ email })}
-                />
-              <input
-                    type="password"
-                    placeholder="password"
-                    onChange={password => this.setState({ password })}
-                />
-
-              <div>
-                    <button title="Log In" onClick={this.handleLogin}>Log In</button>
-                    <button title="Sign Up" onClick={this.handleSignup}>Sign Up</button>
-                </div>
-
-                <div>
-                    {errors.length ? <div>{errors.join(' ')}</div> : null}
-                </div>
           </div>;
     }
 }
+{/* <div>
+    <input
+      type="text"
+      placeholder="email"
+      onChange={email => this.setState({ email })}
+      />
+  <input
+        type="password"
+        placeholder="password"
+        onChange={password => this.setState({ password })}
+        />
+
+  <div>
+        <button title="Log In" onClick={this.handleLogin}>Log In</button>
+        <button title="Sign Up" onClick={this.handleSignup}>Sign Up</button>
+    </div>
+
+    <div>
+        {errors.length ? <div>{errors.join(' ')}</div> : null}
+    </div>
+        </div> */}
 
 export default SessionForm;
