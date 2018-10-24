@@ -2,7 +2,7 @@ import React from 'react';
 // import { View, Text, TextInput, Button } from 'react-native';
 
 
-class Auth extends React.Component {
+class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.props = props;
@@ -10,8 +10,17 @@ class Auth extends React.Component {
             email: '',
             password: ''
         };
+        this.handleLogin = this.handleLogin.bind(this);
+        this.handleSignup = this.handleSignup.bind(this);
     }
 
+    handleLogin(){
+      this.props.login(this.state);
+    }
+
+    handleSignup(){
+      this.props.createUser(this.state);
+    }
     render() {
         const { login, createUser, errors } = this.props;
         return (
@@ -22,15 +31,14 @@ class Auth extends React.Component {
                     onChange={email => this.setState({ email })}
                 />
               <input
-                    type="text"
-                    secureTextEntry
+                    type="password"
                     placeholder="password"
                     onChange={password => this.setState({ password })}
                 />
 
               <div>
-                    <button title="Log In" onPress={() => login(this.state)} />
-                    <button title="Sign Up" onPress={() => createUser(this.state)} />
+                    <button title="Log In" onClick={this.handleLogin}>Log In</button>
+                    <button title="Sign Up" onClick={this.handleSignup}>Sign Up</button>
                 </div>
 
                 <div>
@@ -41,4 +49,4 @@ class Auth extends React.Component {
     }
 }
 
-export default Auth;
+export default SessionForm;

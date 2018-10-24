@@ -14,5 +14,3 @@ const recipesReducer = (state = {}, action) => {
 };
 
 export default recipesReducer;
-
-

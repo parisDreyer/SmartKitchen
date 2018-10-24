@@ -1,13 +1,19 @@
 import React from "react";
 // import { View, Text, TextInput, Button } from "react-native";
 
-class Auth extends React.Component {
+class SearchForm extends React.Component {
   constructor(props) {
     super(props);
     this.props = props;
     this.state = {
       ingredient: ""
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+
+  handleClick(){
+    this.props.processForm(this.state.ingredient);
   }
 
   render() {
@@ -17,11 +23,11 @@ class Auth extends React.Component {
         <input
           type="text"
           placeholder="ingredient"
-          onChange={ingredient => this.setState({ ingredient })}
+          onChange={e => this.setState({ ["ingredient"]: e.target.value })}
         />
 
       <div>
-         <button title="Search" onPress={() => this.props.fetchRecipes(this.state.ingredient)} />
+         <button onClick={this.handleClick}>Search</button>
         </div>
 
         <div>
@@ -33,4 +39,4 @@ class Auth extends React.Component {
 }
 }
 
-export default Auth;
+export default SearchForm;
