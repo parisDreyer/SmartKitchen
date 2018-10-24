@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
         };
         this.handleLogin = this.handleLogin.bind(this);
         this.handleSignup = this.handleSignup.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
     }
 
 
@@ -36,47 +37,25 @@ class SessionForm extends React.Component {
         const { login, createUser, errors } = this.props;
         return (
         <div className="loginFormContainer">
-            <label className="loginlabel">Email:</label>
+            <label>Email:</label>
             <input type="text" placeholder="email" onChange={email => this.setState(
                   { email }
                 )} />
 
-            <label className="loginlabel">Password:</label>
+            <label>Password:</label>
             <input type="text" secureTextEntry placeholder="password" onChange={password => this.setState(
                   { password }
                 )} />
 
             <div className="submit">
-              <button onPress={() => login(this.state)}>Login</button>
-              <button onPress={() => createUser(this.state)}>
-                Sign Up
-              </button>
+              <button onClick={this.handleLogin}>Login</button>
+              <button onClick={this.handleSignup}>Sign Up</button>
               <span className="demo" onPress={this.handleDemo()}>
                 Demo
               </span>
             </div>
 
-            <div>
-                <input
-                  type="text"
-                    placeholder="email"
-                    onChange={email => this.setState({ email })}
-                />
-              <input
-                    type="password"
-                    placeholder="password"
-                    onChange={password => this.setState({ password })}
-                />
-
-              <div>
-                    <button title="Log In" onClick={this.handleLogin}>Log In</button>
-                    <button title="Sign Up" onClick={this.handleSignup}>Sign Up</button>
-                </div>
-
-                <div>
-                    {errors.length ? <div>{errors.join(' ')}</div> : null}
-                </div>
-          </div>
+        
           </div>
           );
     }

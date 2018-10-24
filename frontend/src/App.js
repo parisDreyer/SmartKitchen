@@ -41,9 +41,9 @@ const App = () => {
           <Dictaphone />
         </header>
         <Switch>
-          <Route path="/signup" component={SignupFormContainer}/>
-          <Route path="/search" component={SearchContainer}/>
-          <Route path="/index" component={SearchIndexContainer}/>
+          <Route exact path="/signup" component={SignupFormContainer}/>
+          <Route exact path="/search" component={SearchContainer}/>
+          <Route exact path="/index" component={SearchIndexContainer}/>
           <Redirect to="/" />
         </Switch>
     </div>);

@@ -21,10 +21,14 @@
   width:50%;
   height:3px;
   flex-direction: column;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+  padding-left: 20px;
   margin-bottom: 5%;
   margin-top: 1px;
-
+  border: 1px solid #0E6ACB;
+  border-radius: 4px;
 }
 
 .loginFormContainer label{
