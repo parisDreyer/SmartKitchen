@@ -13,35 +13,38 @@ class Auth extends React.Component {
         };
     }
 
+    handleDemo() {
+        return (e) => {
+            e.preventDefault();
+            this.props.demoLogin();
+        };
+    }
+
     render() {
         const { login, createUser, errors } = this.props;
-        return <div className="loginContainer">
-            <div className="loginFormContainer">
-              <label className="loginlabel">
-                Email:
-                <input type="text" placeholder="email" onChange={email => this.setState(
-                      { email }
-                    )} className="logininput" />
-              </label>
+        return <div className="loginFormContainer">
+            <label className="loginlabel">Email:</label>
+            <input type="text" placeholder="email" onChange={email => this.setState(
+                  { email }
+                )} />
 
-              <label className="loginlabel">
-                Password:
-                <input type="text" secureTextEntry placeholder="password" onChange={password => this.setState(
-                      { password }
-                    )} className="logininput" />
-              </label>
+            <label className="loginlabel">Password:</label>
+            <input type="text" secureTextEntry placeholder="password" onChange={password => this.setState(
+                  { password }
+                )} />
 
-              <div className="submit">
-                <button onPress={() => login(this.state)} className="loginbutton">
-                  Login
-                </button>
-                <button onPress={() => createUser(this.state)} className="loginbutton" > Sign Up
-                </button>
-              </div>
+            <div className="submit">
+              <button onPress={() => login(this.state)}>Login</button>
+              <button onPress={() => createUser(this.state)}>
+                Sign Up
+              </button>
+              <span className="demo" onPress={this.handleDemo()}>
+                Demo
+              </span>
+            </div>
 
-              <div>
-                {errors.length ? <div>{errors.join(" ")}</div> : null}
-              </div>
+            <div>
+              {errors.length ? <div>{errors.join(" ")}</div> : null}
             </div>
           </div>;
     }
