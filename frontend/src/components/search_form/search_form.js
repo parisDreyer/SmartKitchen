@@ -14,6 +14,7 @@ class SearchForm extends React.Component {
 
   handleClick(){
     this.props.processForm(this.state.ingredient);
+    this.props.history.push('index');
   }
 
   render() {
