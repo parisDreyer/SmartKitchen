@@ -1,5 +1,6 @@
 import React from 'react';
 // import { View, Text, TextInput, Button } from 'react-native';
+import "../../css/sessionform.css";
 
 
 class Auth extends React.Component {
@@ -14,30 +15,35 @@ class Auth extends React.Component {
 
     render() {
         const { login, createUser, errors } = this.props;
-        return (
-            <div>
-                <input
-                  type="text"
-                    placeholder="email"
-                    onChange={email => this.setState({ email })}
-                />
-              <input
-                    type="text"
-                    secureTextEntry
-                    placeholder="password"
-                    onChange={password => this.setState({ password })}
-                />
+        return <div className="loginContainer">
+            <div className="loginFormContainer">
+              <label className="loginlabel">
+                Email:
+                <input type="text" placeholder="email" onChange={email => this.setState(
+                      { email }
+                    )} className="logininput" />
+              </label>
+
+              <label className="loginlabel">
+                Password:
+                <input type="text" secureTextEntry placeholder="password" onChange={password => this.setState(
+                      { password }
+                    )} className="logininput" />
+              </label>
+
+              <div className="submit">
+                <button onPress={() => login(this.state)} className="loginbutton">
+                  Login
+                </button>
+                <button onPress={() => createUser(this.state)} className="loginbutton" > Sign Up
+                </button>
+              </div>
 
               <div>
-                    <button title="Log In" onPress={() => login(this.state)} />
-                    <button title="Sign Up" onPress={() => createUser(this.state)} />
-                </div>
-
-                <div>
-                    {errors.length ? <div>{errors.join(' ')}</div> : null}
-                </div>
+                {errors.length ? <div>{errors.join(" ")}</div> : null}
+              </div>
             </div>
-        );
+          </div>;
     }
 }
 
