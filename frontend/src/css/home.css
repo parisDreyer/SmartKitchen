@@ -1,0 +1,51 @@
+.home-container{
+  display: flex;
+  background-image: url(../images/bg28.jpg);
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+   z-index: -1;
+}
+
+.h2text{
+  font-size: 48px; 
+  color: #330A75;
+  margin-top: 2%;
+  
+  font-family: "Proxima", Arial, Helvetica, sans-serif;
+}
+
+.slide{
+  margin-top: 5%;
+  font-size: 42px;
+   color: #3D89EC;
+   font-family: "Proxima", Arial, Helvetica, sans-serif;
+}
+
+.noneed{
+   margin-top: 5%;
+  font-size: 25px; 
+  color: #3D89EC;
+  margin-bottom: 5%; 
+  font-family: "Proxima", Arial, Helvetica, sans-serif;
+}
+
+.start{
+  border: 1px solid #0E6ACB;
+  border-radius: 4px;
+  color: #0E6ACB;
+  background: white;
+  font-size: 17px;
+  padding: 5px;
+  font-family: "Proxima", Arial, Helvetica, sans-serif;
+}
+
+
+.start:hover { 
+    background-color: #0E6ACB;
+    color: white;
+}
