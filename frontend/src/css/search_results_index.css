@@ -1,3 +1,28 @@
+.recipe-list {
+  column-count: 2;
+  column-rule-style: solid;
+  column-rule-width: 4px;
+}
+
 .search-results-index-item {
-  
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 50px;
+}
+
+.search-results-index-item a {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.recipe-img {
+  width: 300px;
+  height: auto;
+}
+
+.recipe-label {
+  font-size: 32px;
+  margin-left: 40px;
 }
