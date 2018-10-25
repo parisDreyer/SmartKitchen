@@ -16,19 +16,36 @@ const propTypes = PropTypes ? {
 } : defaultPropTypes;
 
 class Dictaphone extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            renderUtil: false
+        };
+    }
     render() {
         const { transcript, resetTranscript, browserSupportsSpeechRecognition } = this.props
-
+    
         if (!browserSupportsSpeechRecognition) {
             return null
         }
 
-        return (
-            <div>
-                <button onClick={resetTranscript}>Reset</button>
-                <span>{transcript}</span>
-            </div>
-        )
+        if(this.state.renderUtil){
+            return (
+                <div>
+                    <button onClick={resetTranscript}>Reset</button>
+                    <div className="speech-input">{transcript}</div>
+                </div>
+            )
+        } else {
+            return (
+                <div className="render-speech">
+                    <button onClick={()=>this.setState({['renderUtil']: true})}>
+                        Vocal Input
+                    </button>
+                </div>
+            )
+        }
     }
 }
 
