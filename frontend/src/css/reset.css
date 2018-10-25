@@ -14,11 +14,16 @@ input, textarea, span, footer {
   background: transparent;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: Istok Web;
   color: #31017a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 
@@ -57,4 +62,8 @@ group:after {
   content: "";
   display: block;
   clear: both;
+}
+
+#root {
+  height: 100%;
 }
