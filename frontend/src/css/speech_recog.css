@@ -23,7 +23,9 @@
   border: 1px solid #0E6ACB;
   border-radius: 4px;
 }
-
+.speech-input {
+    display: none;
+}
 .loginFormContainer label{
     margin-top: 2%;
     margin-left:22%;
@@ -37,6 +39,7 @@
   border: 1px solid #0E6ACB;
   border-radius: 4px;
   height: 7vh;
+  min-height: 1rem;
   color: #0E6ACB;
   background: white;
   font-size: 17px;
@@ -49,12 +52,13 @@
   border: 1px solid #0E6ACB;
   border-radius: 4px;
   height: 11vh;
+  min-height: 1rem;
   color: #0E6ACB;
   background: white;
   font-size: 17px;
-  position: relative;
-  top: 4rem;
-  left: -2.25%;
+  position: absolute;
+  bottom: 0.25rem;
+  left: 32%;
 }
 
 button:hover { 

@@ -23,14 +23,23 @@ class Dictaphone extends Component {
             renderUtil: false
         };
     }
+
+    
     render() {
         const { transcript, resetTranscript, browserSupportsSpeechRecognition } = this.props
-    
+        window.speechRecogTranscript=transcript;
         if (!browserSupportsSpeechRecognition) {
             return null
         }
 
         if(this.state.renderUtil){
+            const resetButton = window.location.toString().includes("/search") ? (
+                <div className="reset-speech-input">
+                    <button onClick={resetTranscript}>
+                        Reset
+                  </button>
+                </div>
+            ) : null;
             return <div>
                 <div className="render-speech">
                   <button
@@ -41,21 +50,22 @@ class Dictaphone extends Component {
                     Text Input
                   </button>
                 </div>
-                <div className="reset-speech-input">
-                  <button onClick={resetTranscript}>
-                    Reset
-                  </button>
-                </div>
-                <div className="speech-input">{transcript}</div>
+                {resetButton}
+                <div id="speech-transcript" className="speech-input">{transcript}</div>
               </div>;
         } else {
-            return (
-                <div className="render-speech">
-                    <button onClick={()=>this.setState({['renderUtil']: true})}>
-                        Vocal Input
-                    </button>
+            return <div className="render-speech">
+                <button
+                  onClick={() =>
+                    this.setState({ ["renderUtil"]: true })
+                  }
+                >
+                  Vocal Input
+                </button>
+                <div id="speech-transcript" className="speech-input">
+                  {transcript}
                 </div>
-            )
+              </div>;
         }
     }
 }
