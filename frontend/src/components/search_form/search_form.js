@@ -1,5 +1,4 @@
 import React from "react";
-// import { View, Text, TextInput, Button } from "react-native";
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -12,17 +11,8 @@ class SearchForm extends React.Component {
     this.handleVoiceInput = this.handleVoiceInput.bind(this);
     this.voiceChangeInputHandle = window.setInterval(() => window.speechRecogTranscript != this.state.ingredient ?
       this.handleVoiceInput(window.speechRecogTranscript) : null, 1000);
-    // this.searchInput = ()=>{};
   }
 
-  // componentDidMount(nextProps){
-    // this.searchInput = document.getElementById("search-input-field");
-    // let betterSpeechTrnscrpt = document.getElementById("speech-transcript");
-    // if(betterSpeechTrnscrpt){
-    //   this.speechTranscript = betterSpeechTrnscrpt;
-    //   // this.speechTranscript.addEventListener("change", e => console.log(e.target));
-    // }
-  // }
 
   handleClick(){
     this.props.processForm(this.state.ingredient);
@@ -33,7 +23,6 @@ class SearchForm extends React.Component {
   handleVoiceInput(ingredient){
     this.setState({ ['ingredient']: ingredient });
     const inputfield = document.getElementById("search-input-field");
-    // debugger
     inputfield.value = ingredient;
 
   }
