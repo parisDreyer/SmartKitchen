@@ -31,12 +31,23 @@ class Dictaphone extends Component {
         }
 
         if(this.state.renderUtil){
-            return (
-                <div>
-                    <button onClick={resetTranscript}>Reset</button>
-                    <div className="speech-input">{transcript}</div>
+            return <div>
+                <div className="render-speech">
+                  <button
+                    onClick={() =>
+                      this.setState({ ["renderUtil"]: false })
+                    }
+                  >
+                    Text Input
+                  </button>
                 </div>
-            )
+                <div className="reset-speech-input">
+                  <button onClick={resetTranscript}>
+                    Reset
+                  </button>
+                </div>
+                <div className="speech-input">{transcript}</div>
+              </div>;
         } else {
             return (
                 <div className="render-speech">

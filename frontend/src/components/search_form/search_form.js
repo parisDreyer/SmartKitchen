@@ -20,7 +20,7 @@ class SearchForm extends React.Component {
   render() {
     const { errors } = this.props;
     return (
-      <div>
+      <div className="search-form">
         <input
           type="text"
           placeholder="ingredient"
