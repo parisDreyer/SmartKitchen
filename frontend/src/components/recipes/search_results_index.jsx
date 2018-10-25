@@ -25,8 +25,8 @@ class SearchResultsIndex extends React.Component {
     render() {
       // const { recipes } = this.props;
       return (
-        <section>
-          <h1 className="yummy">Choose a yummy recipe and get cooking!</h1>
+        <section className="recipe-list-page">
+          <h1 className="favorite-recipe">Choose your favorite recipe and get cooking!</h1>
           <ul className="recipe-list">
             {this.state.recipes.map((recipe, idx) => <SearchResultsIndexItem key={idx} recipe={recipe.recipe} />)}
           </ul>
