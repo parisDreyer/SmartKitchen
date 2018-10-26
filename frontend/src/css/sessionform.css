@@ -1,8 +1,3 @@
-.body{
-  height: 100%;
-  width: 100%;
-}
-
 .session-form-outer {
   display: flex;
   flex-direction: column;
@@ -14,33 +9,31 @@
   background-size: 100%;
 }
 
-.loginFormContainer{
+.loginFormContainer {
   background: #E8F0FD;
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 300px;
+  width: 650px;
+  height: 360px;
   align-self: center;
   margin: auto;
 }
 
-
-
-.loginFormContainer input{
+.loginFormContainer input {
   display: flex;
   margin: auto;
-  width:50%;
-  height:3px;
+  width: 50%;
+  height: 2%;
   flex-direction: column;
-  padding: 20px;
+  padding: 4%;
   margin-bottom: 5%;
   text-align: left;
-  margin-top: 1px;
+  margin-top: 1%;
   border: 1px solid #0E6ACB;
   border-radius: 4px;
 }
 
-.loginFormContainer label{
+.loginFormContainer label {
   margin-top: 2%;
   margin-left:22%;
   color: black; 
@@ -48,31 +41,42 @@
   text-align: left;
 }
 
-.loginFormContainer button{
-  width:30%;
+.session-button {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  width: 30%;
   border: 1px solid #0E6ACB;
   border-radius: 4px;
   height: 7vh;
   color: #0E6ACB;
   background: white;
-  font-size: 17px;
+  font-size: 1em;
 }
 
-button:hover { 
+.session-button:hover { 
   background-color: #0E6ACB;
   color: white;
 }
 
-.submit{
+.session-submit {
   display: flex;
   justify-content: space-evenly;
-  margin-left: 15%;
 }
 
-.demo{
-  border: none;
-  color: #0E6ACB;
+.session-demo {
   cursor: pointer;
-  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+@media (max-width: 1000px) {
+  .session-form-outer {
+    display: block;
+    overflow: hidden;
+  }
+
+  .loginFormContainer {
+    margin-top: 30px;
+  }
+}
