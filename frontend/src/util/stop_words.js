@@ -5,7 +5,20 @@ const isStopWord = (word) => {
     
     switch(test[0]){
         case "a":
-            return ["a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any", "are", "as", "at"].includes(test);
+            switch(test.length){
+                case 1:
+                    return "a" === test;
+                case 2:
+                    return ["am", "an", "as", "at"].includes(test);
+                case 3:
+                    return ["and", "all", "any", "are"].includes(test);
+                case 5:
+                    return ["after", "again", "about", "above"].includes(test);
+                case 7:
+                    return "against" === test;
+                default:
+                    return false;
+            }
         case "b":
             return ["be", "because", "been", "before", "being", "below", "between", "both", "but", "by"].includes(test);
         case "c":
@@ -17,7 +30,22 @@ const isStopWord = (word) => {
         case "f":
             return ["few", "for", "from", "further"].includes(test);
         case "h":
-            return ["had", "has", "have", "having", "he", "he'd", "he'll", "he's", "her", "here", "here's", "hers", "herself", "him", "himself", "his", "how", "how's"].includes(test);
+            switch(test.length){
+                case 2:
+                    return "he" === test;
+                case 3:
+                    return ["had", "has", "her", "him", "his", "how"].includes(test);
+                case 4:
+                    return ["he'd", "he's", "hers"].includes(test);
+                case 5:
+                    return ["here", "how's", "have", "he'll"];
+                case 6:
+                    return ["having", "here's"].includes(test);
+                case 7:
+                    return ["herself", "himself",  ].includes(test);
+                default:
+                    return false;
+            }
         case "i":
             return ["i", "i'd", "i'll", "i'm", "i've", "if", "in", "into", "is", "it", "it's", "its", "itself"].includes(test);
         case "l":
@@ -31,13 +59,45 @@ const isStopWord = (word) => {
         case "s":
             return ["same", "she", "she'd", "she'll", "she's", "should", "so", "some", "such", "than"].includes(test);
         case "t":
-            return ["that", "that's", "the", "their", "theirs", "them", "themselves", "then", "there", "there's", "these", "they", "they'd", "they'll", "they're", "they've", "this", "those", "through", "to", "too"].includes(test);
+            switch(test.length){
+                case 2:
+                    return test === "to";
+                case 3:
+                    return ["the", "too"].includes(test);
+                case 4:
+                    return ["then", "they", "that", "their", "them", "this"].includes(test);
+                case 5:
+                    return ["these", "there"].includes(test);
+                case 6:
+                    return ["that's", "theirs", "they'd"].includes(test);
+                case 7:
+                    return ["there's", "they'll", "they're", "those", "they've", "through"].includes(test);
+                case 10:
+                    return "themselves" === test;
+                default: 
+                    return false;
+            } 
         case "u":
             return ["under", "until", "up"].includes(test);
         case "v":
             return ["very"].includes(test);
         case "w":
-            return ["was", "we", "we'd", "we'll", "we're", "we've", "were", "what", "what's", "when", "when's", "where", "where's", "which", "while", "who", "who's", "whom", "why", "why's", "with", "would"].includes(test);
+            switch(test.length){
+                case 2:
+                    return test === "we";
+                case 3:
+                    return ["was", "who", "why"].includes(test);
+                case 4:
+                    return ["we'd", "were", "when", "what", "with", "whom"].includes(test);
+                case 5:
+                    return ["which", "we'll", "we're", "we've", "while", "would", "where", "who's", "why's"].includes(test);
+                case 6:
+                    return ["what's", "when's", ].includes(test);
+                case 7:
+                    return ["where's", ];
+                default:
+                    return false;
+            }
         case "y":
             return ["you", "you'd", "you'll", "you're", "you've", "your", "yours", "yourself", "yourselves"].includes(test);
         default:
