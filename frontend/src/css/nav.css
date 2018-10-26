@@ -1,8 +1,10 @@
 
 header {
-  background-color: #4286f4;
+  /* background-color: #4286f4; */
   height: 60px;
   vertical-align: center;
+  /* background-image: linear-gradient(#4286f4, rgb(214, 229, 252)); */
+  background-image: url(../images/metallic-background.jpg);
 }
 
 .nav-bar {
@@ -11,7 +13,7 @@ header {
   display: flex;
   justify-content: space-between;
   width: 90%;
-  background-color: #4286f4;
+  background-image: inherit;
 }
 
 .nav-link {
@@ -24,4 +26,9 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.nav-link:hover {
+  background-color: #f0f720;
+  color: #31017a;
 }
