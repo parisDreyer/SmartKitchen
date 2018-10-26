@@ -1,0 +1,81 @@
+.loginFormContainer{
+    background: #E8F0FD;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 300px;
+    align-self: center;
+    margin: auto;
+}
+
+
+
+.speech-input input{
+    display: flex;
+  margin: auto;
+  width:50%;
+  height:3px;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 5%;
+    text-align: left;
+  margin-top: 1px;
+  border: 1px solid #0E6ACB;
+  border-radius: 4px;
+}
+.speech-input {
+    display: none;
+}
+.loginFormContainer label{
+    margin-top: 2%;
+    margin-left:22%;
+    color: black; 
+    margin-bottom: 1%;
+    text-align: left;
+}
+
+.render-speech button{
+  width:30%;
+  border: 1px solid #0E6ACB;
+  border-radius: 4px;
+  height: 7vh;
+  min-height: 1rem;
+  color: #0E6ACB;
+  background: white;
+  font-size: 17px;
+  position: absolute;
+  top: 0.25rem;
+  left: 32.5%;
+}
+.reset-speech-input button{
+  width:30%;
+  border: 1px solid #0E6ACB;
+  border-radius: 4px;
+  height: 11vh;
+  min-height: 1rem;
+  color: #0E6ACB;
+  background: white;
+  font-size: 17px;
+  position: absolute;
+  bottom: 0.25rem;
+  left: 32%;
+}
+
+button:hover { 
+    background-color: #0E6ACB;
+    color: white;
+}
+
+.submit{
+    display: flex;
+    justify-content: space-evenly;
+      margin-left: 15%;
+}
+
+.demo{
+    border: none;
+    color: #0E6ACB;
+    cursor: pointer;
+    padding-top: 10px;
+}
+

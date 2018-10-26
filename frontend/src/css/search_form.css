@@ -1,0 +1,25 @@
+.search-form{
+    margin-left: -2.5%;
+    height: auto;
+    min-height: 10rem;
+    position: relative;
+    top: 12rem;
+}
+
+.search-form input{
+    font-size: 3rem;
+}
+
+.search-button button{
+  width:30%;
+  border: 1px solid #0E6ACB;
+  border-radius: 4px;
+  height: 7vh;
+  min-height: 1rem;
+  color: #0E6ACB;
+  background: white;
+  font-size: 17px;
+  position: relative;
+  top: 1rem;
+  margin-left: -2.5%;
+}
