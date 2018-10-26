@@ -1,6 +1,6 @@
 .home-container{
   display: flex;
-  background-image: url(../images/bg28.jpg);
+  background-image: url(../images/35.jpeg);
   height: 100vh;
   width: 100vw;
   box-sizing: border-box;
@@ -22,16 +22,18 @@
 .slide{
   margin-top: 5%;
   font-size: 42px;
-   color: #3D89EC;
+   color: white;
    font-family: "Proxima", Arial, Helvetica, sans-serif;
+   text-shadow: -2px 0 #330A75, 0 2px #330A75, 2px 0 #330A75, 0 -2px #330A75;
 }
 
 .noneed{
    margin-top: 5%;
   font-size: 25px; 
-  color: #3D89EC;
+  color: #330A75;
   margin-bottom: 5%; 
   font-family: "Proxima", Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px rgba(0,0,0,.2);
 }
 
 .start{
