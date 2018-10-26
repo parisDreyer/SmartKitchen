@@ -15,8 +15,8 @@ class SearchForm extends React.Component {
   }
 
   handleClick() {
-    let searchCriteria = this.state.ingredient.split(' ').filter((w) => !isStopWord(w)).join(', ');
-    this.props.processForm(searchCriteria);
+    let searchCriteria = this.state.ingredient.split(',').join(' ').split(' ').filter((w) => !isStopWord(w));
+    this.props.processForm(searchCriteria.join(", "));
     this.props.saveIngredients(searchCriteria);
     window.clearInterval(this.voiceChangeInputHandle);
     this.props.history.push('index');
