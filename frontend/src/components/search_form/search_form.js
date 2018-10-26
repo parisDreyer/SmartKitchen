@@ -10,12 +10,15 @@ class SearchForm extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleVoiceInput = this.handleVoiceInput.bind(this);
     this.voiceChangeInputHandle = window.setInterval(() => window.isRenderingSpeechInput && window.speechRecogTranscript != this.state.ingredient ?
-      this.handleVoiceInput(window.speechRecogTranscript) : null, 1000);
+    this.handleVoiceInput(window.speechRecogTranscript) : null, 1000);
   }
 
 
-  handleClick(){
+  handleClick() {
+
+    let ingredientsArray = this.state.ingredients.split(',');
     this.props.processForm(this.state.ingredient);
+    this.props.saveIngredients(ingredientsArray);
     window.clearInterval(this.voiceChangeInputHandle);
     this.props.history.push('index');
   }
