@@ -33,8 +33,7 @@ class SessionForm extends React.Component {
   render() {
     const { login, createUser, errors } = this.props;
     
-    return (
-      <div className="session-form-outer">
+    return <div className="session-form-outer">
         <div className="loginFormContainer">
           <label className="loginlabel">Email:</label>
           <input type="text" placeholder="email" onChange={email => this.setState(
@@ -46,18 +45,17 @@ class SessionForm extends React.Component {
                 { password }
               )} />
 
-          <div className="submit">
-            <button onPress={() => login(this.state)}>Login</button>
-            <button onPress={() => createUser(this.state)}>
-              Sign Up
+          <div className="session-submit">
+            <button className="session-button" onPress={() => login(this.state)}>
+              Login
             </button>
-            <span className="demo" onPress={this.handleDemo()}>
+          <button className="session-button" onPress={() => createUser(this.state)}>Sign Up</button>
+            <span className="session-button session-demo" onPress={this.handleDemo()}>
               Demo
             </span>
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 {/* <div>
