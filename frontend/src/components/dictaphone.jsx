@@ -24,6 +24,8 @@ class Dictaphone extends Component {
         };
     }
 
+
+
     
     render() {
         const { transcript, resetTranscript, browserSupportsSpeechRecognition } = this.props
@@ -32,40 +34,44 @@ class Dictaphone extends Component {
             return null
         }
 
-        if(this.state.renderUtil){
-            const resetButton = window.location.toString().includes("/search") ? (
-                <div className="reset-speech-input">
-                    <button onClick={resetTranscript}>
-                        Reset
-                  </button>
-                </div>
-            ) : null;
-            return <div>
-                <div className="render-speech">
-                  <button
+        if(window.location.toString().includes("/search")) {
+            if(this.state.renderUtil){
+                const resetButton = (
+                    <div className="reset-speech-input">
+                        <button onClick={resetTranscript}>
+                            Reset
+                    </button>
+                    </div>
+                );
+                return <div>
+                    <div className="render-speech">
+                    <button
+                        onClick={() => this.setState({ ["renderUtil"]: false })}
+                    >
+                        Text Input
+                    </button>
+                    </div>
+                    {resetButton}
+                    <div id="speech-transcript" className="speech-input">{transcript}</div>
+                </div>;
+            } else {
+                return <div className="render-speech">
+                    <button
                     onClick={() =>
-                      this.setState({ ["renderUtil"]: false })
+                        this.setState({ ["renderUtil"]: true })
                     }
-                  >
-                    Text Input
-                  </button>
-                </div>
-                {resetButton}
-                <div id="speech-transcript" className="speech-input">{transcript}</div>
-              </div>;
+                    >
+                    Vocal Input
+                    </button>
+                    <div id="speech-transcript" className="speech-input">
+                    {transcript}
+                    </div>
+                </div>;
+            }
         } else {
-            return <div className="render-speech">
-                <button
-                  onClick={() =>
-                    this.setState({ ["renderUtil"]: true })
-                  }
-                >
-                  Vocal Input
-                </button>
-                <div id="speech-transcript" className="speech-input">
-                  {transcript}
-                </div>
-              </div>;
+            if (transcript.length > 0) resetTranscript();
+            if (this.state.renderUtil) this.setState({["renderUtil"]: false});
+            return null;
         }
     }
 }
