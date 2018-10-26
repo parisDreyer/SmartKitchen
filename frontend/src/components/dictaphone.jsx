@@ -22,9 +22,14 @@ class Dictaphone extends Component {
         this.state = {
             renderUtil: false
         };
+        this.switchRenderUtil = this.switchRenderUtil.bind(this);
+        window.isRenderingSpeechInput = false;
     }
 
-
+    switchRenderUtil(trueOrFalse){
+        window.isRenderingSpeechInput = trueOrFalse;
+        this.setState({ ["renderUtil"]: trueOrFalse });
+    }
 
     
     render() {
@@ -45,9 +50,7 @@ class Dictaphone extends Component {
                 );
                 return <div>
                     <div className="render-speech">
-                    <button
-                        onClick={() => this.setState({ ["renderUtil"]: false })}
-                    >
+                    <button onClick={() => this.switchRenderUtil(false)}>
                         Text Input
                     </button>
                     </div>
@@ -56,11 +59,7 @@ class Dictaphone extends Component {
                 </div>;
             } else {
                 return <div className="render-speech">
-                    <button
-                    onClick={() =>
-                        this.setState({ ["renderUtil"]: true })
-                    }
-                    >
+                    <button onClick={() => this.switchRenderUtil(true)}>
                     Vocal Input
                     </button>
                     <div id="speech-transcript" className="speech-input">
