@@ -1,40 +1,51 @@
 .body{
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.session-form-outer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: calc(100% - 60px);
+  align-items: center;
+  background-image: url(../images/baking-bread-cooking.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .loginFormContainer{
-    background: #E8F0FD;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 300px;
-    align-self: center;
-    margin: auto;
+  background: #E8F0FD;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 300px;
+  align-self: center;
+  margin: auto;
 }
 
 
 
 .loginFormContainer input{
-    display: flex;
+  display: flex;
   margin: auto;
   width:50%;
   height:3px;
   flex-direction: column;
   padding: 20px;
   margin-bottom: 5%;
-    text-align: left;
+  text-align: left;
   margin-top: 1px;
   border: 1px solid #0E6ACB;
   border-radius: 4px;
 }
 
 .loginFormContainer label{
-    margin-top: 2%;
-    margin-left:22%;
-    color: black; 
-    margin-bottom: 1%;
-    text-align: left;
+  margin-top: 2%;
+  margin-left:22%;
+  color: black; 
+  margin-bottom: 1%;
+  text-align: left;
 }
 
 .loginFormContainer button{
@@ -48,20 +59,20 @@
 }
 
 button:hover { 
-    background-color: #0E6ACB;
-    color: white;
+  background-color: #0E6ACB;
+  color: white;
 }
 
 .submit{
-    display: flex;
-    justify-content: space-evenly;
-      margin-left: 15%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 15%;
 }
 
 .demo{
-    border: none;
-    color: #0E6ACB;
-    cursor: pointer;
-    padding-top: 10px;
+  border: none;
+  color: #0E6ACB;
+  cursor: pointer;
+  padding-top: 10px;
 }
 
