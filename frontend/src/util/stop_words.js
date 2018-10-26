@@ -1,5 +1,5 @@
 const isStopWord = (word) => {
-    if (word.length === 0) return false;
+    if (word.length === 0) return true;
 
     let test = word.toLowerCase();
     
