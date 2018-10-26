@@ -1,4 +1,5 @@
 import React from "react";
+import isStopWord from "../../util/stop_words";
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class SearchForm extends React.Component {
 
 
   handleClick(){
-    this.props.processForm(this.state.ingredient);
+    let searchCriteria = this.state.ingredient.split(' ').filter((w) => !isStopWord(w)).join(', ');
+    this.props.processForm(searchCriteria);
     window.clearInterval(this.voiceChangeInputHandle);
     this.props.history.push('index');
   }
