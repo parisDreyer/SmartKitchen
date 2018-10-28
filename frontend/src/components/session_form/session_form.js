@@ -16,11 +16,11 @@ class SessionForm extends React.Component {
   }
 
   handleLogin() {
-    this.props.login(this.state);
+    this.props.loginUser(this.state);
   }
 
   handleSignup() {
-    this.props.createUser(this.state);
+    this.props.registerUser(this.state);
   }
 
   handleDemo() {
@@ -31,31 +31,31 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const { login, createUser, errors } = this.props;
-    
+    const { loginUser, registerUser, errors } = this.props;
+
     return <div className="session-form-outer">
-        <div className="loginFormContainer">
-          <label className="loginlabel">Email:</label>
-          <input type="text" placeholder="email" onChange={email => this.setState(
-                { email }
-              )} />
+      <div className="loginFormContainer">
+        <label className="loginlabel">Email:</label>
+        <input type="text" placeholder="email" onChange={email => this.setState(
+          { email }
+        )} />
 
-          <label className="loginlabel">Password:</label>
-          <input type="text" secureTextEntry placeholder="password" onChange={password => this.setState(
-                { password }
-              )} />
+        <label className="loginlabel">Password:</label>
+        <input type="text" secureTextEntry placeholder="password" onChange={password => this.setState(
+          { password }
+        )} />
 
-          <div className="session-submit">
-            <button className="session-button" onPress={() => login(this.state)}>
-              Login
+        <div className="session-submit">
+          <button className="session-button" onClick={() => loginUser(this.state)}>
+            Login
             </button>
-          <button className="session-button" onPress={() => createUser(this.state)}>Sign Up</button>
-            <span className="session-button session-demo" onPress={this.handleDemo()}>
-              Demo
+          <button className="session-button" onClick={() => registerUser(this.state)}>Sign Up</button>
+          <span className="session-button session-demo" onClick={this.handleDemo()}>
+            Demo
             </span>
-          </div>
         </div>
-      </div>;
+      </div>
+    </div>;
   }
 }
 {/* <div>

@@ -7,6 +7,7 @@ const keys = require('../../config/keys');
 const passport = require("passport");
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
+const validateFavorites = require("../../validation/favorites");
 
 
 router.post('/register', (req, res) => {
@@ -101,6 +102,61 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
         id: req.user.id,
         email: req.user.email
     });
+});
+
+router.get("/favorites", passport.authenticate("jwt", { session: false }), (req, res) => {
+    User.findOne({ _id: req.user.id }).exec((err, user) => {
+        res.json(
+            user.favorites
+        )
+    })
+});
+
+router.put("/favorites/add", passport.authenticate("jwt", { session: false }), (req, res) => {
+    const { errors, isValid } = validateFavorites(req.body);
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+
+    User.findOne({ _id: req.user.id }).exec((err, user) => {
+        let new_favorites = user.favorites;
+        if (new_favorites.find(link => link.label === req.body.lebel)) {
+            return res.status(400).json({ label: "duplicate label" })
+        } else if (new_favorites.find(link => link.url === req.body.url)) {
+            return res.status(400).json({ url: "duplicate url" })
+        }
+        else {
+            new_favorites.push({ label: req.body.label, url: req.body.url });
+            User.update({ _id: req.user.id }, { favorites: new_favorites }).then(
+                res.json(
+                    user.favorites
+                ));
+        }
+    })
+});
+
+router.delete("/favorites/remove", passport.authenticate("jwt", { session: false }), (req, res) => {
+    const { errors, isValid } = validateFavorites(req.body);
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+    // User.findOne({ _id: req.user.id }).exec((err, user) => {
+    //     let new_favorites = user.favorites.filter( fav => {});
+
+    //     if (new_favorites.find(link => link.label === req.body.lebel)) {
+    //         return res.status(400).json({ label: "duplicate label" })
+    //     } else if (new_favorites.find(link => link.url === req.body.url)) {
+    //         return res.status(400).json({ url: "duplicate url" })
+    //     }
+    //     else {
+    //         new_favorites.push({ label: req.body.label, url: req.body.url });
+    //         User.update({ _id: req.user.id }, { favorites: new_favorites }).then(
+    //             res.json(
+    //                 user.favorites
+    //             ));
+    //     }
+    // })
+
 })
 
 module.exports = router;
