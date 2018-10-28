@@ -8,7 +8,7 @@ export const fetchRecipes = (ingredients) => dispatch => (
 ));
 
 export const fetchBackupRecipes = (ingredient = "lime") => dispatch => APIUtil.fetchBackupRecipes(ingredient).then(
-           recipes => dispatch(receiveBackupRecipes(recipes))
+  recipes => dispatch(receiveBackupRecipes(recipes))
 );
 
 export const receiveBackupRecipes = (payload) => ({

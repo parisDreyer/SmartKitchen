@@ -29,10 +29,11 @@ class SearchResultsIndex extends React.Component {
           <ul className="recipe-list">
             {this.state.recipes.map((recipe, idx) => <SearchResultsIndexItem key={idx} recipe={recipe.recipe || recipe} />)}
           </ul>
-          <button onClick={() =>this.props.fetchBackupRecipes()}>Fetch All</button>
         </section>
       );
     }
-}
-
-export default SearchResultsIndex;
+  }
+  
+  export default SearchResultsIndex;
+  
+  // <button onClick={() =>this.props.fetchBackupRecipes()}>Fetch All</button> // this button was just to test the backup api OCT-30-2018

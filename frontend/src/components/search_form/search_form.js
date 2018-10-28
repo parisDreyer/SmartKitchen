@@ -16,7 +16,9 @@ class SearchForm extends React.Component {
 
   handleClick() {
     let searchCriteria = this.state.ingredient.split(',').join(' ').split(' ').filter((w) => !isStopWord(w));
-    this.props.processForm(searchCriteria.join(", "));
+    let searchStr = searchCriteria.join(", ");
+    this.props.processForm(searchStr); // get the recipes from the api
+    this.props.backupRecipes(searchStr); // get the extra recipes from our local database
     this.props.saveIngredients(searchCriteria);
     window.clearInterval(this.voiceChangeInputHandle);
     this.props.history.push('index');
