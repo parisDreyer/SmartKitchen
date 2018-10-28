@@ -17,7 +17,6 @@ class SearchResultsIndex extends React.Component {
 
     componentWillUpdate(nextProps){
       if (this.props.recipes != nextProps.recipes){
-        console.log("recipes!", nextProps.recipes);
         this.setState({ ['recipes']: nextProps.recipes});
       }
     }
@@ -28,11 +27,13 @@ class SearchResultsIndex extends React.Component {
         <section className="recipe-list-page">
           <h1 className="favorite-recipe">Choose your favorite recipe and get cooking!</h1>
           <ul className="recipe-list">
-            {this.state.recipes.map((recipe, idx) => <SearchResultsIndexItem key={idx} recipe={recipe.recipe} />)}
+            {this.state.recipes.map((recipe, idx) => <SearchResultsIndexItem key={idx} recipe={recipe.recipe || recipe} />)}
           </ul>
         </section>
       );
     }
-}
-
-export default SearchResultsIndex;
+  }
+  
+  export default SearchResultsIndex;
+  
+  // <button onClick={() =>this.props.fetchBackupRecipes()}>Fetch All</button> // this button was just to test the backup api OCT-30-2018
