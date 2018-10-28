@@ -6,6 +6,10 @@ export const fetchRecipes = (ingredients) => dispatch => (
   APIUtil.fetchRecipes(ingredients).then(recipes => (dispatch(receiveRecipes(recipes)))
 ));
 
+export const fetchBackupRecipes = (ingredients) => dispatch => (
+  APIUtil.fetchBackendRecipes(ingredients).then(recipes => (dispatch(receiveRecipes(recipes))))
+);
+
 export const receiveRecipes = (recipes) => ({
   type: FETCH_RECIPES,
   recipes: JSON.parse(recipes.request.response).hits

@@ -30,6 +30,7 @@ class SearchResultsIndex extends React.Component {
           <ul className="recipe-list">
             {this.state.recipes.map((recipe, idx) => <SearchResultsIndexItem key={idx} recipe={recipe.recipe} />)}
           </ul>
+          <button onClick={() =>this.props.fetchBackupRecipes()}>Fetch All</button>
         </section>
       );
     }

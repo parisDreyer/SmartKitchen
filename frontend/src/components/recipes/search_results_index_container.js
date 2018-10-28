@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
 import SearchResultsIndex from './search_results_index';
-import { fetchRecipes } from '../../actions/recipes_actions';
+import { fetchRecipes, fetchBackupRecipes } from '../../actions/recipes_actions';
 import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = state => {
@@ -10,7 +10,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchRecipes: () => dispatch(fetchRecipes())
+  fetchRecipes: (ingredients) => dispatch(fetchRecipes(ingredients)),
+  fetchBackupRecipes: () => dispatch(fetchBackupRecipes())
 });
 
 export default connect(
