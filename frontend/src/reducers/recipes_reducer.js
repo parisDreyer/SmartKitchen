@@ -1,4 +1,7 @@
-import { FETCH_RECIPES } from "../actions/recipes_actions";
+import {
+  FETCH_RECIPES,
+  FETCH_BACKUP_RECIPES
+} from "../actions/recipes_actions";
 import merge from 'lodash/merge';
 
 const recipesReducer = (state = {}, action) => {
@@ -8,6 +11,9 @@ const recipesReducer = (state = {}, action) => {
         case FETCH_RECIPES:
             let newState = Object.assign({}, action.recipes);
             return merge({}, newState);
+        case FETCH_BACKUP_RECIPES:
+            let backupState = Object.assign({}, action.recipes);
+            return merge({}, backupState);
         default:
             return state;
     }

@@ -5,8 +5,7 @@ const bodyParser = require('body-parser');
 const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
 const passport = require('passport');
-const BackupRecipes = require('./full_format_recipes').BackupRecipes;
-
+const {filteredBackup} = require('./full_format_recipes'); // https://www.kaggle.com/hugodarwood/epirecipes/version/2#full_format_recipes.json
 
 
 require('./config/passport')(passport);
@@ -18,7 +17,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
 
-//('http://www.backupRecipes.com/')
 
 mongoose
   .connect(db)
@@ -46,8 +44,9 @@ app.get('/api/hello', (req, res) => {
 app.get("/", (req, res) => res.send("Hello World"));
 
 
-app.get('http://localhost:5000/api/backup/', (req, res) => {
-   res.send({ express: BackupRecipes })
+app.get('/api/backup', (req, res) => {
+   
+   res.send(JSON.stringify(filteredBackup(req.url)))
  });
 
 

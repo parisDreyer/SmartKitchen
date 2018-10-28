@@ -4,5 +4,10 @@ export const fetchRecipes = ingredient => axios.get(`https://api.edamam.com/sear
 
 
 
-export const fetchBackendRecipes = () => axios.get(`http://localhost:5000/api/backup/`);
+export const fetchBackupRecipes = (ingredient) => axios.get(
+  `/api/backup/`, 
+   { params: {
+    ingredient: ingredient
+   }
+  });
   //`/api.edamam.com/search?q=${ingredient}&app_id=6d9d0107&app_key=4e66ac21b03248caf02cc471ba4749c1`);
