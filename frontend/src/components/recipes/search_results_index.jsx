@@ -18,7 +18,7 @@ class SearchResultsIndex extends React.Component {
     }
 
     render() {
-      let matchedRecipes;
+      let matchedRecipes = null;
       if (this.state.recipes) {
         matchedRecipes = this.state.recipes.filter(recipe => {
           let matchCount = 0;
@@ -31,6 +31,7 @@ class SearchResultsIndex extends React.Component {
               }
             });
           });
+
           if (this.props.ingredients.length > 2) {
             return matchCount / (recipeIngredients.length) >= 0.6;
           } else {
