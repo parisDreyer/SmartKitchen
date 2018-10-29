@@ -1,8 +1,8 @@
 .home-container{
   display: flex;
-  background-image: url(../images/35.jpeg);
   height: 100vh;
   width: 100vw;
+  background-image: url(../images/32.jpg);
   box-sizing: border-box;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,16 +11,25 @@
    z-index: -1;
 }
 
-.h2text{
-  font-size: 48px; 
-  color: #330A75;
+
+/* .h2text{
+  font-size: 50px; 
+  color: white;
   margin-top: 2%;
   
   font-family: "Proxima", Arial, Helvetica, sans-serif;
+} */
+
+.tagline{
+  font-size: 40px; 
+  color: rgb(224, 221, 204);
+  margin-top: 2%;
+  font-family:'Great Vibes', Helvetica, sans-serif;
+  /* font-family: "Proxima", Arial, Helvetica, sans-serif; */
 }
 
 .slide{
-  margin-top: 5%;
+  
   font-size: 42px;
    color: white;
    font-family: "Proxima", Arial, Helvetica, sans-serif;
@@ -30,7 +39,7 @@
 .noneed{
    margin-top: 5%;
   font-size: 25px; 
-  color: #330A75;
+  color: rgb(224, 221, 204);
   margin-bottom: 5%; 
   font-family: "Proxima", Arial, Helvetica, sans-serif;
   text-shadow: 2px 2px rgba(0,0,0,.2);
@@ -39,7 +48,7 @@
 .start{
   border: 1px solid #0E6ACB;
   border-radius: 4px;
-  color: #0E6ACB;
+  color: #320A75;
   background: white;
   font-size: 17px;
   padding: 5px;
@@ -48,6 +57,7 @@
 
 
 .start:hover { 
-    background-color: #0E6ACB;
+    background-color: #320A75;
     color: white;
 }
+
