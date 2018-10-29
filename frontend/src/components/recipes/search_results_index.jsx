@@ -18,7 +18,7 @@ class SearchResultsIndex extends React.Component {
     }
 
     render() {
-      let matchedRecipes;
+      let matchedRecipes = null;
       if (this.state.recipes) {
         matchedRecipes = this.state.recipes.filter(recipe => {
           let matchCount = 0;
