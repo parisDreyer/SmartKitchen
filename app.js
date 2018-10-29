@@ -6,7 +6,14 @@ const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
 const passport = require('passport');
 const {filteredBackup} = require('./full_format_recipes'); // https://www.kaggle.com/hugodarwood/epirecipes/version/2#full_format_recipes.json
+const path = require("path");
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("frontend/build"));
+  app.get("/", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
+}
 
 require('./config/passport')(passport);
 
