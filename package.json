@@ -11,7 +11,7 @@
     "webpack": "webpack --watch",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
     "start": "concurrently npm-run-all --parallel server webpack",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
   "license": "ISC",
