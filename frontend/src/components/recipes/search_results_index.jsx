@@ -22,15 +22,16 @@ class SearchResultsIndex extends React.Component {
       if (this.state.recipes) {
         matchedRecipes = this.state.recipes.filter(recipe => {
           let matchCount = 0;
-          const recipeIngredients = recipe.recipe.ingredients;
+          const recipeIngredients = recipe.recipe ? recipe.recipe.ingredients : recipe.ingredients ? recipe.ingredients : [];
 
-          this.props.ingredients.forEach(ingredient => {
+        this.props.ingredients.forEach(ingredient => {
             recipeIngredients.forEach(recipeIngredient => {
-              if (recipeIngredient.text.includes(ingredient)) {
+              if (recipeIngredient.text ? recipeIngredient.text.includes(ingredient) : recipeIngredient.includes(ingredient)) {
                 matchCount += 1;
               }
             });
           });
+
           if (this.props.ingredients.length > 2) {
             return matchCount / (recipeIngredients.length) >= 0.6;
           } else {
@@ -46,7 +47,7 @@ class SearchResultsIndex extends React.Component {
           </h1>
           <ul className="recipe-list">
             {matchedRecipes.map((recipe, idx) => (
-              <SearchResultsIndexItem key={idx} recipe={recipe.recipe} />
+              <SearchResultsIndexItem key={idx} recipe={recipe.recipe || recipe} />
             ))}
           </ul>
         </section>;
@@ -57,5 +58,3 @@ class SearchResultsIndex extends React.Component {
   }
   
   export default SearchResultsIndex;
-  
-  // <button onClick={() =>this.props.fetchBackupRecipes()}>Fetch All</button> // this button was just to test the backup api OCT-30-2018
