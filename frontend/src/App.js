@@ -20,7 +20,14 @@ import {
   HashRouter
 } from 'react-router-dom';
 
+const path = require("path");
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("frontend/build"));
+  app.get("/", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 const store = ConfigureStore();
 // need to get this working from the example at
@@ -33,8 +40,6 @@ const store = ConfigureStore();
 //     fetchCurrentSession({ Authorization: token })(store.dispatch);
 //   }
 // };
-
-
 
 const App = () => {
   return (
@@ -53,9 +58,6 @@ const App = () => {
         </Switch>
     </div>);
 }
-
-// hi
-// <SearchIndexContainer />
 
 const AppContainer = () => {
   return (<Provider store={store}>

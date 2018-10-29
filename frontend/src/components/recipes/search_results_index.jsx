@@ -36,9 +36,13 @@ class SearchResultsIndex extends React.Component {
       }
     }
     render() {
+
       this.readStateFromSessionStorage(this.state.recipes.length === 0 && sessionStorage["recipe_results"]);
 
-      let matchedRecipes;
+
+
+      let matchedRecipes = null;
+
       if (this.state.recipes) {
         matchedRecipes = this.state.recipes.filter(recipe => {
           let matchCount = 0;
