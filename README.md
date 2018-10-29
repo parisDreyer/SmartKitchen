@@ -1,5 +1,7 @@
 # `README`
 
+## MERN Stack Project	
+### By: Amanda Mitchel, Nathasha Surendran, Chris Yip, Luke Dreyer	
 
 - [SmartKitchen Live](https://smart-kitchen1.herokuapp.com/)
 - `This README documents the steps necessary to get the
