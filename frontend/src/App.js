@@ -7,9 +7,11 @@ import Dictaphone from './components/dictaphone.jsx';
 import NavBar from './components/nav_bar/nav_bar';
 import Home from './components/home';
 import SearchIndexContainer from './components/recipes/search_results_index_container';
+import BackupRecipeShowContainer from './components/recipes/backup_recipe_show_container';
 import ConfigureStore from "./store/store";
 import SignupFormContainer from "./components/session_form/signup_form_container";
 import SearchContainer from "./components/search_form/search_form_container";
+
 import {
   Route,
   Redirect,
@@ -51,6 +53,7 @@ const App = () => {
           <Route path="/signup" component={SignupFormContainer}/>
           <Route path="/search" component={SearchContainer}/>
           <Route path="/index" component={SearchIndexContainer}/>
+          <Route exact path="/recipes/:recipeId" component={BackupRecipeShowContainer} />
           <Redirect to="/" />
         </Switch>
     </div>);
