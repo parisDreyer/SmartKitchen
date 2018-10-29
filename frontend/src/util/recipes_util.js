@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const fetchRecipes = ingredient => axios.get(`https://api.edamam.com/search?q=${ingredient}&app_id=68d59548&app_key=c4a1c2b75e93db176aa16ac0de9e66bb&to=100`);	
+export const fetchRecipes = ingredient => axios.get(`https://api.edamam.com/search?q=${ingredient}&app_id=68d59548&app_key=${process.env.RECIPE}&to=100`);	
 
 
 
