@@ -19,6 +19,13 @@
   color: white;
 }
 
+
+.recipe-show{
+  font-size: 1.2rem;
+}
+h1.recipe-show { font-size: 2rem;}
+h2.recipe-show { font-size: 1.6rem;}
+
 .App-link {
   color: #61dafb;
 }
