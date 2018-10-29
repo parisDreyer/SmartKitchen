@@ -9,8 +9,14 @@ header {
   margin: auto;
   height: 60px;
   display: flex;
-  justify-content: space-between;
+  
   width: 90%;
+}
+
+.logo{
+  
+ width: 10%;
+ height: 100%;
 }
 
 .nav-link {
@@ -24,9 +30,41 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  
+}
+
+.nav-link2{
+  margin: 10px;
+  color: #320A75;
+  font-size: 25px;
+  font-family: 'Baloo Bhaijaan', cursive;
+  margin-right: 50%;
+  
 }
 
 .nav-link:hover {
   background-color: #31017a;
   color: #ffffff;
+}
+
+
+.h2text{
+  font-size: 25px; 
+  color: white;
+  margin-top: 1%;
+
+  font-family: "Proxima", Arial, Helvetica, sans-serif;
+}
+
+.signup{
+  padding: 12px;
+  margin: 10px;
+  font-size: 25px;
+  background-color: #31017a;
+  color: #f0f720;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 5%;
 }

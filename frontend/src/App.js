@@ -19,8 +19,8 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
-
 const store = ConfigureStore();
+
 // need to get this working from the example at
 // https://github.com/znrm/typedraw/blob/master/src/App.js
 // for frontend auth
