@@ -10,7 +10,7 @@
     "server": "nodemon app.js",
     
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "start": "concurrently npm-run-all --parallel server webpack",
+    "start": "node app.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
