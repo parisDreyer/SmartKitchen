@@ -6,8 +6,10 @@ import merge from 'lodash/merge';
 
 function customRecipeMerge(newState, additionalState, adjustURL = false){
     let length = Object.keys(newState).length;
+
     for (let i = 0; i < additionalState.length; ++i) {
         let new_pos = i + length;
+
         [newState[new_pos], newState[i]] = [newState[i], additionalState[i]];
         if(adjustURL) newState[new_pos].url = `/recipes/${new_pos}`; // swap the local website url to the new idx for finding in the state
     }
