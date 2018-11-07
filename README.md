@@ -6,7 +6,7 @@
 - [SmartKitchen Live](https://smart-kitchen1.herokuapp.com/)
 - `This README documents the steps necessary to get the
 application up and running.`
-- `Welcome to SmartKitchen. SmartKitchen is a clone of StackOverflow that uses text from 14th Century Italian Epic Poet Dante Alighieri's Divine Comedy as sample data.`
+- `Welcome to SmartKitchen. SmartKitchen is a recipe app that suggests what to cook based on what you have.
 
 
 ## `Setup`
