@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const { loginUser, registerUser, errors } = this.props;
+    // const { loginUser, registerUser, errors } = this.props;
 
     return <div className="session-form-outer">
         <div className="loginFormContainer">

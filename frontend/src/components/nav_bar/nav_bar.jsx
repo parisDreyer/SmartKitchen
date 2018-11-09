@@ -18,7 +18,3 @@ export default () => {
       </div>
     </div>;
 };
-
-
-
-

@@ -36,6 +36,7 @@ import {
 
 import jwt_decode from "jwt-decode";
 import * as APIUtil from "./util/session_api_util";
+import * as SessionActions from "./actions/session_actions";
 import { AuthRoute, ProtectedRoute } from "./util/route_util";
 
 const store = ConfigureStore();
@@ -45,20 +46,20 @@ if (localStorage.jwtToken) {
   // Decode token and get user info and exp
   const decoded = jwt_decode(localStorage.jwtToken);
   // Set user and isAuthenticated
-  store.dispatch(APIUtil.setCurrentUser(decoded));
+  store.dispatch(SessionActions.fetchCurrentUser(decoded)); //APIUtil.setCurrentUser(decoded));
 
   // Check for expired token
   const currentTime = Date.now() / 1000;
   if (decoded.exp < currentTime) {
     // Logout user
-    store.dispatch(APIUtil.logoutUser());
+    store.dispatch(SessionActions.logout())//APIUtil.logoutUser());
     // Redirect to login
     window.location.href = "/login";
   }
 }
 
 
-
+window.store = store;
 const App = () => {
   return (
     <div className="App">
