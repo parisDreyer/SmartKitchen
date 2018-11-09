@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
     };
     this.handleLogin = this.handleLogin.bind(this);
     this.handleSignup = this.handleSignup.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   update(e, field) {
@@ -25,20 +26,16 @@ class SessionForm extends React.Component {
     this.props.loginUser(this.state);
   }
 
-  handleSignup() {
-    console.log(this.state);
+  handleSignup() { 
     this.props.registerUser(this.state);
   }
 
   handleDemo() {
-    return e => {
-      e.preventDefault();
       this.props.demoLogin();
-    };
   }
 
   componentWillUnmount() {
-    this.props.clearError();
+    // this.props.clearError();
   }
 
   render() {

@@ -22,8 +22,8 @@ export const setAuthToken = token => {
 
 export const registerUser = (userData, history) => dispatch => {
     axios
-        .post('/api/users/register', userData)
-        .then(res => {
+    .post('/api/users/register', userData)
+    .then(res => {
             // Save to localStorage
             const { token } = res.data;
             // Set token to ls
@@ -38,7 +38,7 @@ export const registerUser = (userData, history) => dispatch => {
         .catch(err =>
             dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
+                payload: err ? err.response ? err.response.data : err.response : ''//err.response.data
             })
         );
 };

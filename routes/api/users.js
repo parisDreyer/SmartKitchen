@@ -11,7 +11,6 @@ const validateFavorites = require("../../validation/favorites");
 
 
 router.post('/register', (req, res) => {
-
     const { errors, isValid } = validateRegisterInput(req.body);
 
     if (!isValid){
