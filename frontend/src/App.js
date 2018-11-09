@@ -19,8 +19,8 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
-<<<<<<< HEAD
-const store = ConfigureStore();
+
+
 
 // need to get this working from the example at
 // https://github.com/znrm/typedraw/blob/master/src/App.js
@@ -33,7 +33,7 @@ const store = ConfigureStore();
 //   }
 // };
 
-=======
+
 import jwt_decode from "jwt-decode";
 import * as APIUtil from "./util/session_api_util";
 import { AuthRoute, ProtectedRoute } from "./util/route_util";
@@ -58,7 +58,7 @@ if (localStorage.jwtToken) {
 }
 
 
->>>>>>> 4f6e2eba521d4ef0668c17e6cf79a5a4bc4f1eed
+
 const App = () => {
   return (
     <div className="App">
