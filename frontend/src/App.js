@@ -19,6 +19,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+<<<<<<< HEAD
 const store = ConfigureStore();
 
 // need to get this working from the example at
@@ -32,6 +33,32 @@ const store = ConfigureStore();
 //   }
 // };
 
+=======
+import jwt_decode from "jwt-decode";
+import * as APIUtil from "./util/session_api_util";
+import { AuthRoute, ProtectedRoute } from "./util/route_util";
+
+const store = ConfigureStore();
+if (localStorage.jwtToken) {
+  // Set auth token header auth
+  APIUtil.setAuthToken(localStorage.jwtToken);
+  // Decode token and get user info and exp
+  const decoded = jwt_decode(localStorage.jwtToken);
+  // Set user and isAuthenticated
+  store.dispatch(APIUtil.setCurrentUser(decoded));
+
+  // Check for expired token
+  const currentTime = Date.now() / 1000;
+  if (decoded.exp < currentTime) {
+    // Logout user
+    store.dispatch(APIUtil.logoutUser());
+    // Redirect to login
+    window.location.href = "/login";
+  }
+}
+
+
+>>>>>>> 4f6e2eba521d4ef0668c17e6cf79a5a4bc4f1eed
 const App = () => {
   return (
     <div className="App">
