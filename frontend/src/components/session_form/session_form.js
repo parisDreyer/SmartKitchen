@@ -15,8 +15,7 @@ class SessionForm extends React.Component {
     this.handleSignup = this.handleSignup.bind(this);
   }
 
-  update(field) {
-    return e =>
+  update(e, field) {
       this.setState({
         [field]: e.target.value
       });
@@ -48,19 +47,19 @@ class SessionForm extends React.Component {
     return <div className="session-form-outer">
         <div className="loginFormContainer">
           <label className="loginlabel">Email:</label>
-          <input type="text" id="email" placeholder="email" onChange={this.update("email")} />
+          <input type="text" id="email" placeholder="email" onChange={(e) => this.update(e, "email")} />
 
           <label className="loginlabel">Password:</label>
-        <input type="text" secureTextEntry id="password" placeholder="password" onChange={this.update('password')} />
+        <input type="text" secureTextEntry id="password" placeholder="password" onChange={(e) => this.update(e, 'password')} />
 
           <div className="session-submit">
-            <button className="session-button" onClick={() => loginUser(this.state)}>
+            <button className="session-button" onClick={this.handleLogin}>
               Login
             </button>
-            <button className="session-button" onClick={() => registerUser(this.state)}>
+            <button className="session-button" onClick={this.handleSignup}>
               Sign Up
             </button>
-            <span className="session-button session-demo" onClick={this.handleDemo()}>
+            <span className="session-button session-demo" onClick={this.handleDemo}>
               Demo
             </span>
           </div>
@@ -68,26 +67,5 @@ class SessionForm extends React.Component {
       </div>;
   }
 }
-{/* <div>
-    <input
-      type="text"
-      placeholder="email"
-      onChange={email => this.setState({ email })}
-      />
-  <input
-        type="password"
-        placeholder="password"
-        onChange={password => this.setState({ password })}
-        />
-
-  <div>
-        <button title="Log In" onClick={this.handleLogin}>Log In</button>
-        <button title="Sign Up" onClick={this.handleSignup}>Sign Up</button>
-    </div>
-
-    <div>
-        {errors.length ? <div>{errors.join(' ')}</div> : null}
-    </div>
-        </div> */}
 
 export default SessionForm;
