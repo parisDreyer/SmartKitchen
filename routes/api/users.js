@@ -42,6 +42,8 @@ router.post('/register', (req, res) => {
                                     { expiresIn: 86400 },
                                     (err, token) => {
                                         res.json({
+                                            userId: user.id,
+                                            email: user.email,
                                             success: true,
                                             token: 'Bearer ' + token
                                         });
@@ -84,6 +86,8 @@ router.post('/login', (req, res) => {
                             { expiresIn: 86400 },
                             (err, token) => {
                                 res.json({
+                                    userId: user.id,
+                                    email: user.email,
                                     success: true,
                                     token: 'Bearer ' + token
                                 });
@@ -139,23 +143,6 @@ router.delete("/favorites/remove", passport.authenticate("jwt", { session: false
     if (!isValid) {
         return res.status(400).json(errors);
     }
-    // User.findOne({ _id: req.user.id }).exec((err, user) => {
-    //     let new_favorites = user.favorites.filter( fav => {});
-
-    //     if (new_favorites.find(link => link.label === req.body.lebel)) {
-    //         return res.status(400).json({ label: "duplicate label" })
-    //     } else if (new_favorites.find(link => link.url === req.body.url)) {
-    //         return res.status(400).json({ url: "duplicate url" })
-    //     }
-    //     else {
-    //         new_favorites.push({ label: req.body.label, url: req.body.url });
-    //         User.update({ _id: req.user.id }, { favorites: new_favorites }).then(
-    //             res.json(
-    //                 user.favorites
-    //             ));
-    //     }
-    // })
-
 })
 
 module.exports = router;
