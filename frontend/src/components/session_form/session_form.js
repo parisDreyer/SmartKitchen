@@ -8,49 +8,55 @@ class SessionForm extends React.Component {
     super(props);
     this.props = props;
     this.state = {
-      email: '',
-      password: ''
+      email: "",
+      password: ""
     };
     this.handleLogin = this.handleLogin.bind(this);
     this.handleSignup = this.handleSignup.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
+  }
+
+  update(e, field) {
+      this.setState({
+        [field]: e.target.value
+      });
   }
 
   handleLogin() {
-    this.props.login(this.state);
+    this.props.loginUser(this.state);
   }
 
-  handleSignup() {
-    this.props.createUser(this.state);
+  handleSignup() { 
+    this.props.registerUser(this.state);
   }
 
   handleDemo() {
-    return (e) => {
-      e.preventDefault();
       this.props.demoLogin();
-    };
+  }
+
+  componentWillUnmount() {
+    // this.props.clearError();
   }
 
   render() {
-    const { login, createUser, errors } = this.props;
-    
+    // const { loginUser, registerUser, errors } = this.props;
+
     return <div className="session-form-outer">
         <div className="loginFormContainer">
           <label className="loginlabel">Email:</label>
-          <input type="text" placeholder="email" onChange={email => this.setState(
-                { email }
-              )} />
+          <input type="text" id="email" placeholder="email" onChange={(e) => this.update(e, "email")} />
 
           <label className="loginlabel">Password:</label>
-          <input type="text" secureTextEntry placeholder="password" onChange={password => this.setState(
-                { password }
-              )} />
+        <input type="text" secureTextEntry id="password" placeholder="password" onChange={(e) => this.update(e, 'password')} />
 
           <div className="session-submit">
-            <button className="session-button" onPress={() => login(this.state)}>
+            <button className="session-button" onClick={this.handleLogin}>
               Login
             </button>
-          <button className="session-button" onPress={() => createUser(this.state)}>Sign Up</button>
-            <span className="session-button session-demo" onPress={this.handleDemo()}>
+            <button className="session-button" onClick={this.handleSignup}>
+              Sign Up
+            </button>
+            <span className="session-button session-demo" onClick={this.handleDemo}>
               Demo
             </span>
           </div>
@@ -58,26 +64,5 @@ class SessionForm extends React.Component {
       </div>;
   }
 }
-{/* <div>
-    <input
-      type="text"
-      placeholder="email"
-      onChange={email => this.setState({ email })}
-      />
-  <input
-        type="password"
-        placeholder="password"
-        onChange={password => this.setState({ password })}
-        />
-
-  <div>
-        <button title="Log In" onClick={this.handleLogin}>Log In</button>
-        <button title="Sign Up" onClick={this.handleSignup}>Sign Up</button>
-    </div>
-
-    <div>
-        {errors.length ? <div>{errors.join(' ')}</div> : null}
-    </div>
-        </div> */}
 
 export default SessionForm;
