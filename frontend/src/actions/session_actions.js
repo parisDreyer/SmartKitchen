@@ -17,9 +17,10 @@ export const login = user => dispatch =>
         err => dispatch(receiveErrors(Object.values(err.response.data)))
     );
 
-export const logout = () => dispatch => SessionAPIUtil.logoutUser()
-    .then(res => dispatch(quitSession(res)))
-    .catch(err => console.log(err));
+export const logout = () => dispatch => {
+            dispatch(quitSession());
+           SessionAPIUtil.logoutUser();
+        }
 
 export const receiveUser = (res, token) => ({
     type: RECEIVE_USER,
