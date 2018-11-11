@@ -18,9 +18,9 @@ export const login = user => dispatch =>
     );
 
 export const logout = () => dispatch => {
-            dispatch(quitSession());
-           SessionAPIUtil.logoutUser();
-        }
+    SessionAPIUtil.logoutUser();
+    dispatch(quitSession());
+}
 
 export const receiveUser = (res, token) => ({
     type: RECEIVE_USER,

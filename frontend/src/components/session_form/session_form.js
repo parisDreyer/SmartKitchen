@@ -1,6 +1,7 @@
 import React from 'react';
 // import { View, Text, TextInput, Button } from 'react-native';
 import "../../css/sessionform.css";
+import { withRouter } from 'react-router-dom';
 
 
 class SessionForm extends React.Component {
@@ -24,14 +25,17 @@ class SessionForm extends React.Component {
 
   handleLogin() {
     this.props.loginUser(this.state);
+    this.props.history.push("/");
   }
 
   handleSignup() { 
     this.props.registerUser(this.state);
+    this.props.history.push("/");
   }
 
   handleDemo() {
       this.props.demoLogin();
+    this.props.history.push("/");
   }
 
   componentWillUnmount() {
@@ -65,4 +69,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

@@ -39,14 +39,12 @@ if (localStorage.jwtToken) {
   if (decoded.exp < currentTime) {
     // Logout user
     store.dispatch(SessionActions.logout());
-    // Redirect to login
-    window.location.href = "/login";
   }
 }
 
 
 window.store = store;
-const App = () => {
+const App = ({store}) => {
   return (
     <div className="App">
         <header>
