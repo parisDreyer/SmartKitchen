@@ -11,17 +11,16 @@ const nullUser = {
 
 
 const sessionReducer = (oldState = nullUser, action) => {
-    console.log('in session reducer', action);
     Object.freeze(oldState);
     const newState = {};
-    console.log('session', action);
     switch (action.type) {
         case RECEIVE_USER: {
             const user = {
                 email: action.res.data.email, id: action.res.data.userId
             };
             const token = action.token ? action.token.Authorization : action.res.data.token;
-            // setAuthToken(token);
+
+            if (token) localStorage.setItem('jwtToken', token);
             return merge(newState, oldState, {
                 currentUser: user,
                 loggedIn: true

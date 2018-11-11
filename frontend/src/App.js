@@ -20,20 +20,6 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-
-
-// need to get this working from the example at
-// https://github.com/znrm/typedraw/blob/master/src/App.js
-// for frontend auth
-//--------------------------
-// const checkForCurrentUser = async () => {
-//   const token = await getAuthToken();
-//   if (token) {
-//     fetchCurrentSession({ Authorization: token })(store.dispatch);
-//   }
-// };
-
-
 import jwt_decode from "jwt-decode";
 import * as APIUtil from "./util/session_api_util";
 import * as SessionActions from "./actions/session_actions";
@@ -46,25 +32,23 @@ if (localStorage.jwtToken) {
   // Decode token and get user info and exp
   const decoded = jwt_decode(localStorage.jwtToken);
   // Set user and isAuthenticated
-  store.dispatch(SessionActions.fetchCurrentUser(decoded)); //APIUtil.setCurrentUser(decoded));
+  store.dispatch(SessionActions.fetchCurrentUser(decoded));
 
   // Check for expired token
   const currentTime = Date.now() / 1000;
   if (decoded.exp < currentTime) {
     // Logout user
-    store.dispatch(SessionActions.logout())//APIUtil.logoutUser());
-    // Redirect to login
-    window.location.href = "/login";
+    store.dispatch(SessionActions.logout());
   }
 }
 
 
 window.store = store;
-const App = () => {
+const App = ({store}) => {
   return (
     <div className="App">
         <header>
-          <NavBar />
+          <NavBar store={store}/>
           <Dictaphone />
         </header>
         <Switch>
