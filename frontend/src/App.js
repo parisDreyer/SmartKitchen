@@ -48,23 +48,21 @@ window.store = store;
 const App = ({store}) => {
   return (
     <div className="App">
-        <header>
-          <NavBar store={store}/>
-          <Dictaphone />
-        </header>
-        <main className="display">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/signup" component={SignupFormContainer}/>
-            <Route path="/search" component={SearchContainer}/>
-            <Route path="/index" component={SearchIndexContainer}/>
-            <Route exact path="/recipes/:recipeId" component={BackupRecipeShowContainer} />
-            <Redirect to="/" />
-          </Switch>
-        </main>
-        <footer>
-        <Footer />
-        </footer>
+      <header>
+        <NavBar store={store}/>
+        <Dictaphone />
+      </header>
+      <main className="display">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/signup" component={SignupFormContainer}/>
+          <Route path="/search" component={SearchContainer}/>
+          <Route path="/index" component={SearchIndexContainer}/>
+          <Route exact path="/recipes/:recipeId" component={BackupRecipeShowContainer} />
+          <Redirect to="/" />
+        </Switch>
+      </main>
+      <Footer />
     </div>);
 }
 
