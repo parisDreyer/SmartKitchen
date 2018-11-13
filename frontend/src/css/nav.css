@@ -9,12 +9,10 @@ header {
   margin: auto;
   height: 60px;
   display: flex;
-  
   width: 90%;
 }
 
-.logo{
-  
+.logo {
  width: 10%;
  height: 100%;
 }
@@ -30,16 +28,14 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  
 }
 
-.nav-link2{
+.nav-link2 {
   margin: 10px;
   color: #320A75;
   font-size: 25px;
   font-family: 'Baloo Bhaijaan', cursive;
   margin-right: 50%;
-  
 }
 
 .nav-link:hover {
@@ -48,15 +44,14 @@ header {
 }
 
 
-.h2text{
+.h2text {
   font-size: 25px; 
   color: white;
   margin-top: 1%;
-
   font-family: "Proxima", Arial, Helvetica, sans-serif;
 }
 
-.signup{
+.signup {
   padding: 12px;
   margin: 10px;
   font-size: 25px;

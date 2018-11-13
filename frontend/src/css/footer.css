@@ -1,20 +1,24 @@
-.bottom-part{
-    font-family: Verdana,Geneva,sans-serif;
-    background: white;
-    height: 80px;
-    width: 100%;
-    border-top: 1px  solid #213D4B;
+.footer {
+  font-family: Verdana,Geneva,sans-serif;
+  color: #1A3343;
+  background: white;
+  height: 60px;
+  width: 100%;
+  border-top: 1px solid rgb(202, 201, 201);
 }
 
-.sm{
-    margin-top: 1%;
-    display: flex;
-    justify-content: space-evenly;
-    color: #1A3343;
+.sm {
+  margin-top: 1%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.text{
-    color: #1A3343;
-    padding-top: 5px;
+.text {
+  padding-top: 5px;
 }
 
+#edamam-badge {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}

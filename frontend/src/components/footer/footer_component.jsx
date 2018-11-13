@@ -4,10 +4,8 @@ import "../../css/footer.css";
 
 class Footer extends React.Component {
   render() {
-    return <div className="bottom-part">
-        
+    return <div className="footer">
       <div className="text">Follow us! We're friendly:</div>
-    
       <div className="sm">
         <a href="https://github.com/AmandaMitchell707">
           <i className="fab fa-github" />

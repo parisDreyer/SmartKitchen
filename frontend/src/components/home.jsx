@@ -1,10 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css/home.css";
-import Footer from "./footer/footer_component"; 
-
-
-
 
 export default () => (
   <div>
@@ -24,7 +20,6 @@ export default () => (
         </Link>
       </div>
     </div>
-    <Footer />
   </div>
 );
 
