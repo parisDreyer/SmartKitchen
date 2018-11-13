@@ -31,7 +31,6 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-<<<<<<< HEAD
 
 
 }
@@ -43,16 +42,6 @@ header {
   font-family: 'Baloo Bhaijaan', cursive;
   /* margin-right: 50%; */
 
-=======
-}
-
-.nav-link2 {
-  margin: 10px;
-  color: #320A75;
-  font-size: 25px;
-  font-family: 'Baloo Bhaijaan', cursive;
-  margin-right: 50%;
->>>>>>> 9e76e5c9630d60665001a3b773aff987e6bb9602
 }
 
 
