@@ -3,6 +3,7 @@
     height: 100px;
     width: 100%;
     border: 1px  solid #213D4B;
+    font-family: "Proxima", Arial, Helvetica, sans-serif;
 }
 
 .sm{
@@ -10,10 +11,18 @@
     display: flex;
     justify-content: space-evenly;
     color: #1A3343;
+    font-family: "Proxima", Arial, Helvetica, sans-serif;
 }
 
 .text{
     color: #1A3343;
     padding-top: 2%;
+    font-family: "Proxima", Arial, Helvetica, sans-serif;
 }
 
+
+.bottom-part a:hover {
+
+    color: #320B75;
+    font-family: "Proxima", Arial, Helvetica, sans-serif;
+}
