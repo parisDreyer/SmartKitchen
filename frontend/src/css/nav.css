@@ -9,12 +9,12 @@ header {
   margin: auto;
   height: 60px;
   display: flex;
-  
+
   width: 90%;
 }
 
 .logo{
-  
+
  width: 10%;
  height: 100%;
 }
@@ -30,7 +30,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  
+
 }
 
 .nav-link2{
@@ -39,8 +39,10 @@ header {
   font-size: 25px;
   font-family: 'Baloo Bhaijaan', cursive;
   margin-right: 50%;
-  
+
 }
+
+
 
 .nav-link:hover {
   background-color: #31017a;
@@ -49,7 +51,7 @@ header {
 
 
 .h2text{
-  font-size: 25px; 
+  font-size: 25px;
   color: white;
   margin-top: 1%;
 
