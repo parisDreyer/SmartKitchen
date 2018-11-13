@@ -5,6 +5,7 @@ import './css/App.css';
 import { Provider} from 'react-redux';
 import Dictaphone from './components/dictaphone.jsx';
 import NavBar from './components/nav_bar/nav_bar';
+import Footer from "./components/footer/footer_component"; 
 import Home from './components/home';
 import SearchIndexContainer from './components/recipes/search_results_index_container';
 import BackupRecipeShowContainer from './components/recipes/backup_recipe_show_container';
@@ -47,10 +48,11 @@ window.store = store;
 const App = ({store}) => {
   return (
     <div className="App">
-        <header>
-          <NavBar store={store}/>
-          <Dictaphone />
-        </header>
+      <header>
+        <NavBar store={store}/>
+        <Dictaphone />
+      </header>
+      <main className="display">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/signup" component={SignupFormContainer}/>
@@ -59,6 +61,8 @@ const App = ({store}) => {
           <Route exact path="/recipes/:recipeId" component={BackupRecipeShowContainer} />
           <Redirect to="/" />
         </Switch>
+      </main>
+      <Footer />
     </div>);
 }
 
