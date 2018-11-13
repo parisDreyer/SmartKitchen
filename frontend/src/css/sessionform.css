@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: calc(100% - 60px);
+  height: 100%;
   align-items: center;
   background-image: url(../images/baking-bread-cooking.jpg);
   background-repeat: no-repeat;

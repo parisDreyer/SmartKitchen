@@ -1,6 +1,6 @@
 .display {
-  height: calc(100% - 122px);
-  overflow: scroll;
+  height: calc(100% - 124px);
+  overflow: auto;
 }
 
 .App {
