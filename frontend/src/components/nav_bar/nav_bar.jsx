@@ -25,11 +25,15 @@ class NavBar extends React.Component{
     const opt = this.props.currentUser ?
       <Link to="/signup" onClick={this.handleLogout}>Sign Out</Link> : (< Link to="/signup" > Sign Up</Link>);
     return <div className="nav-bar">
+      <div className="firstpart">
         <img src={logo} alt={"logo"} className="logo" />
         <Link to="/" className="nav-link2">
           SMART KITCHEN
         </Link>
+      </div>
+      <div className="secondpart">
         <div className="nav-link">{opt}</div>
+        </div>
         </div>
   };
 }

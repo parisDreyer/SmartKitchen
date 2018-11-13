@@ -9,14 +9,15 @@ header {
   margin: auto;
   height: 60px;
   display: flex;
-
   width: 90%;
+  min-width: 550px;
 }
 
 .logo{
 
  width: 10%;
  height: 100%;
+ padding-top: 1px;
 }
 
 .nav-link {
@@ -31,14 +32,15 @@ header {
   flex-direction: column;
   justify-content: space-around;
 
+
 }
 
 .nav-link2{
-  margin: 10px;
+  margin-top: 10px;
   color: #320A75;
   font-size: 25px;
   font-family: 'Baloo Bhaijaan', cursive;
-  margin-right: 50%;
+  /* margin-right: 50%; */
 
 }
 
@@ -69,4 +71,17 @@ header {
   flex-direction: column;
   justify-content: space-around;
   margin-right: 5%;
+}
+
+.firstpart{
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-content: space-between;
+}
+
+.secondpart{
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
 }
