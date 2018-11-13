@@ -1,13 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css/home.css";
-import Footer from "./footer/footer_component"; 
-
-
-
 
 export default () => (
-  <div>
     <div className="home-container">
       <div className="home-main">
         <h2 className="tagline">A Cooking App for Smart People</h2>
@@ -24,8 +19,6 @@ export default () => (
         </Link>
       </div>
     </div>
-    <Footer />
-  </div>
 );
 
 
