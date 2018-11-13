@@ -12,7 +12,8 @@ header {
   width: 90%;
 }
 
-.logo {
+.logo{
+
  width: 10%;
  height: 100%;
 }
@@ -38,14 +39,16 @@ header {
   margin-right: 50%;
 }
 
+
+
 .nav-link:hover {
   background-color: #31017a;
   color: #ffffff;
 }
 
 
-.h2text {
-  font-size: 25px; 
+.h2text{
+  font-size: 25px;
   color: white;
   margin-top: 1%;
   font-family: "Proxima", Arial, Helvetica, sans-serif;

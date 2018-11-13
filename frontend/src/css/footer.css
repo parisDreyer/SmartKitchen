@@ -17,5 +17,8 @@
   padding-top: 5px;
 }
 
-#edamam-badge {
+.footer a:hover {
+
+    color: #320B75;
+    font-family: "Proxima", Arial, Helvetica, sans-serif;
 }

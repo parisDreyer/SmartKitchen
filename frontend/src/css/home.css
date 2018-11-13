@@ -10,23 +10,23 @@
 
 
 /* .h2text{
-  font-size: 50px; 
+  font-size: 50px;
   color: white;
   margin-top: 2%;
-  
+
   font-family: "Proxima", Arial, Helvetica, sans-serif;
 } */
 
 .tagline{
-  font-size: 40px; 
+  font-size: 52px;
   color: rgb(224, 221, 204);
   margin-top: 2%;
-  font-family:'Great Vibes', Helvetica, sans-serif;
-  /* font-family: "Proxima", Arial, Helvetica, sans-serif; */
+  /* font-family:'Great Vibes', Helvetica, sans-serif; */
+  font-family: "Proxima", Arial, Helvetica, sans-serif;
 }
 
 .slide{
-  
+
   font-size: 42px;
    color: white;
    font-family: "Proxima", Arial, Helvetica, sans-serif;
@@ -35,9 +35,9 @@
 
 .noneed{
    margin-top: 5%;
-  font-size: 25px; 
+  font-size: 25px;
   color: rgb(224, 221, 204);
-  margin-bottom: 5%; 
+  margin-bottom: 5%;
   font-family: "Proxima", Arial, Helvetica, sans-serif;
   text-shadow: 2px 2px rgba(0,0,0,.2);
 }
@@ -53,8 +53,8 @@
 }
 
 
-.start:hover { 
+.start:hover {
     background-color: #320A75;
     color: white;
+    font-family: "Proxima", Arial, Helvetica, sans-serif;
 }
-
