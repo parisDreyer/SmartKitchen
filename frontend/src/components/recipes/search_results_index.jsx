@@ -48,7 +48,7 @@ class SearchResultsIndex extends React.Component {
           let matchCount = 0;
           const recipeIngredients = recipe.recipe ? recipe.recipe.ingredients : recipe.ingredients ? recipe.ingredients : [];
 
-        this.state.ingredients.forEach(ingredient => {
+          this.state.ingredients.forEach(ingredient => {
             recipeIngredients.forEach(recipeIngredient => {
               if (recipeIngredient.text ? recipeIngredient.text.includes(ingredient) : recipeIngredient.includes(ingredient)) {
                 matchCount += 1;
@@ -57,8 +57,12 @@ class SearchResultsIndex extends React.Component {
           });
 
           if (this.state.ingredients.length > 2) {
+            // if user input is 3 ingredients or more, recipes will be filtered to show
+            // only those for which the user has input at least 60% of the listed ingredients
             return matchCount / (recipeIngredients.length) >= 0.6;
           } else {
+            // if user input is 1 to 2 ingredients, recipes will be filtered to show
+            // only those for which the user has input at least 30% of the listed ingredients
             return matchCount / (recipeIngredients.length) >= 0.3;
           }
         });
