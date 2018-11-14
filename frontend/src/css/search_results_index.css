@@ -4,7 +4,7 @@
 
 .favorite-recipe {
   font-family: Verdana,Geneva,sans-serif;
-  font-size: 46px;
+  font-size: 34px;
   padding-top: 40px;
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15); 
 }
@@ -71,7 +71,7 @@
 
 .recipe-label {
   font-family: Verdana,Geneva,sans-serif;
-  font-size: 27px;
+  font-size: 22px;
   width: 335px;
   margin: auto;
 }
