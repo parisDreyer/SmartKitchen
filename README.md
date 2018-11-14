@@ -109,3 +109,24 @@ matchedRecipes = this.state.recipes.filter(recipe => {
   }
 });
 ```
+* The splash page component shown below is one of many React Components that are conditionally rendered based on the front end route.
+```javascript
+export default () => (
+    <div className="home-container">
+      <div className="home-main">
+        <h2 className="tagline">A Cooking App for Smart People</h2>
+        <div className="slide">What's in your kitchen?</div>
+        <p className="noneed">
+          Let Smart Kitchen know what you've got on hand,
+          <br />
+          and we'll show delicious recipes you can make.
+        </p>
+        <br />
+        <br />
+        <Link to="/search" className="start">
+          Get started now!
+        </Link>
+      </div>
+    </div>
+);
+```
