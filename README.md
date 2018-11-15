@@ -34,13 +34,13 @@ The project should then be available at the address `localhost:3000` in your bro
 
 * Splash page welcomes users to the site.
 
-- ![Splash Page](/splash_page.png?raw=true "Splash Page")
+- ![Splash Page](./frontend/src/images/splash_page.png)
 
 * Users can `Search` for `recipes` by `ingredients`. Users can search by `voice` using webkit's speech-to-text api or by text on the search page.
-  - ![Search Recipes Form](/search_page.png?raw=true "Search Recipes Form")
+  - ![Search Recipes Form](./frontend/src/images/search_page.png)
 
 * Search results are rendered in the recipe index page where the user can select a recipe that they want to view.
-  - ![Search Index page](/index_page.png?raw=true "Search Index Page")
+  - ![Search Index page](./frontend/src/images/search_results_page.png)
 
 * Search results persist between page reloads.
 
