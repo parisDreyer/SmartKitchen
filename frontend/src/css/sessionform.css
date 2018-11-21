@@ -6,6 +6,9 @@
   align-items: center;
   background-image: url(../images/baking-bread-cooking.jpg);
   background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 
@@ -60,6 +63,7 @@
   color: #0E6ACB;
   background: white;
   font-size: 1em;
+  min-height: 20px;
 }
 
 .session-button:hover { 
