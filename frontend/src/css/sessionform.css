@@ -6,17 +6,21 @@
   align-items: center;
   background-image: url(../images/baking-bread-cooking.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .loginFormContainer {
-  background: #E8F0FD;
-  display: flex;
-  flex-direction: column;
-  width: 650px;
-  height: 360px;
-  align-self: center;
-  margin: auto;
+  background: antiquewhite;
+    display: flex;
+    flex-direction: column;
+
+    min-width:300px;
+    align-self: center;
+    margin: auto;
+    padding: 8px;
+    padding-top: 32px;
+    padding-bottom: 6%;
+    border-radius: 12px;
 }
 
 .loginFormContainer input {
@@ -34,11 +38,16 @@
 }
 
 .loginFormContainer label {
-  margin-top: 2%;
-  margin-left:22%;
-  color: black; 
-  margin-bottom: 1%;
-  text-align: left;
+    margin-top: 2%;
+    margin-left: 21%;
+    color: black;
+    margin-bottom: 1%;
+    background-color: rgb(255,255,255,0.8);
+    width: 57%;
+    padding: 3px;
+    padding-left: 2px;
+    border-radius: 2px;
+    text-align: left;
 }
 
 .session-button {
@@ -61,7 +70,9 @@
 .session-submit {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 12%;
 }
+
 
 .session-demo {
   cursor: pointer;
@@ -72,11 +83,31 @@
 
 @media (max-width: 1000px) {
   .session-form-outer {
-    display: block;
-    overflow: hidden;
+    /* display: block; */
+    /* overflow: hidden; */
   }
 
   .loginFormContainer {
     margin-top: 30px;
+  }
+}
+
+@media (min-width: 1000px){
+.session-submit {
+  margin-top: 2%;
+}
+}
+@media (max-width: 600px){
+  .session-submit{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4%;
+  }
+  .session-button{
+    margin-top: 8px;
+  }
+  .loginFormContainer {
+    height: 360px;
   }
 }

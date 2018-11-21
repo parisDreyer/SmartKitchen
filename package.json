@@ -12,6 +12,9 @@
     "start": "node app.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
+  "engines": {
+    "node": "8.9.2"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
