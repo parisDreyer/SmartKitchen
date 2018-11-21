@@ -60,6 +60,7 @@
   color: #0E6ACB;
   background: white;
   font-size: 1em;
+  min-height: 20px;
 }
 
 .session-button:hover { 
