@@ -37,7 +37,7 @@ class SearchForm extends React.Component {
     const { errors } = this.props;
 
     return <div className="search-form">
-        <input id="search-input-field"
+        <textarea id="search-input-field"
          type="text" placeholder="ingredient"
          onChange={e => this.setState({ ["ingredient"]: e.target.value })}
          
