@@ -8,6 +8,15 @@
     margin: auto;
 }
 
+.speech-options{
+    left: 0;
+    position: absolute;
+    top: 220px;
+    flex-direction: row;
+    display: flex;
+    /* width: 100%; */
+    justify-content: space-between;
+}
 
 
 .speech-input input{
@@ -33,6 +42,10 @@
     margin-bottom: 1%;
     text-align: left;
 }
+.render-speech{
+    width: 80px;
+    margin-left: 15px;
+}
 
 .render-speech button{
   width:30%;
@@ -43,17 +56,15 @@
   color: #0E6ACB;
   background: white;
   font-size: 17px;
-  /* position: absolute;
-  top: 0.25rem;
-  left: 32.5%; */
-    margin-top: 10px;
-    margin-left: -5%;
+}
+.reset-speech-input{
+    width: 80px
 }
 .reset-speech-input button{
   width:30%;
   border: 1px solid #0E6ACB;
   border-radius: 4px;
-  height: 11vh;
+  height: 7vh;
   min-height: 1rem;
   color: #0E6ACB;
   background: white;
@@ -81,3 +92,8 @@ button:hover {
     padding-top: 10px;
 }
 
+@media screen and (min-width: 400px){
+    .speech-options{
+        top: 120px;
+    }
+}
