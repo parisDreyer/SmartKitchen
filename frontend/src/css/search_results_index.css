@@ -75,3 +75,14 @@
   width: 335px;
   margin: auto;
 }
+
+.search-try-box{
+  display: block;
+  margin-left: 20%;
+  padding-top: 50px;
+  text-align:left;
+  word-break: break-all;
+}
+.search-try-list{
+  margin-left: 5%;
+}

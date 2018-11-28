@@ -1,9 +1,6 @@
 .search-form{
-    margin-left: -2.5%;
     height: auto;
-    min-height: 10rem;
-    position: relative;
-    top: 12rem;
+    margin-top: 100px;
 }
 
 .search-form textarea{

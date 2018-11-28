@@ -35,12 +35,8 @@ class SearchResultsIndex extends React.Component {
         });
       }
     }
-    render() {
 
-      this.readStateFromSessionStorage(this.state.recipes.length === 0 && sessionStorage["recipe_results"]);
-
-
-
+    matchesForRecipes(){
       let matchedRecipes = null;
 
       if (this.state.recipes) {
@@ -59,28 +55,57 @@ class SearchResultsIndex extends React.Component {
           if (this.state.ingredients.length > 2) {
             // if user input is 3 ingredients or more, recipes will be filtered to show
             // only those for which the user has input at least 60% of the listed ingredients
-            return matchCount / (recipeIngredients.length) >= 0.6;
+            return matchCount / recipeIngredients.length >= 0.6;
           } else {
             // if user input is 1 to 2 ingredients, recipes will be filtered to show
             // only those for which the user has input at least 30% of the listed ingredients
-            return matchCount / (recipeIngredients.length) >= 0.3;
+            return matchCount / recipeIngredients.length >= 0.3;
           }
         });
       }
-      if (matchedRecipes) {
-        return <section className="recipe-list-page">
+
+      return matchedRecipes;
+    }
+
+    recipeList(matchedRecipes){
+      return matchedRecipes.length > 0 ? <section className="recipe-list-page">
           <h1 className="favorite-recipe">
             Choose your favorite recipe and get cooking!
           </h1>
           <ul className="recipe-list">
             {matchedRecipes.map((recipe, idx) => (
-              <SearchResultsIndexItem key={idx} recipe={recipe.recipe || recipe} />
+              <SearchResultsIndexItem
+                key={idx}
+                recipe={recipe.recipe || recipe}
+              />
             ))}
           </ul>
+        </section> : <section className="recipe-list-page">
+          <h1 className="favorite-recipe">
+            Looks like your search didn't return any recipes
+          </h1>
+          <div className="search-try-box">
+            Did you try:
+            <ul className="search-try-list">
+              <li>a search with fewer words</li>
+              <li>a search with only food words</li>
+              <li>
+                If you still don't see it, email us and we'll add the
+                recipe!
+              </li>
+              <li>lukepdreyer@gmail.com</li>
+            </ul>
+          </div>
         </section>;
-      } else {
-        return <section className="recipe-list-page">Fetching recipes!</section>
-      }
+    }
+    render() {
+
+      this.readStateFromSessionStorage(this.state.recipes.length === 0 && sessionStorage["recipe_results"]);
+
+      let matchedRecipes = this.matchesForRecipes();
+
+      if (matchedRecipes) return this.recipeList(matchedRecipes);
+      else return <section className="recipe-list-page">Fetching recipes!</section>
     }
   }
   
