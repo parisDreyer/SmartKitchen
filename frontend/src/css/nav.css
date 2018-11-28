@@ -87,6 +87,7 @@ header {
       display: flex;
       margin-right: 16px;
       margin-left: 16px;
+      margin-bottom: 2px;
 }
 
 @media screen and (max-width: 750px){
@@ -96,17 +97,15 @@ header {
 }
 @media screen and (max-width: 650px){
   header{
-    height: 100px;
+    height: 110px;
+  }
+  .nav-bar{
+    justify-content: center;
   }
 }
 
-@media screen and (max-width: 430px){
-  header{
-    height: 150px;
-  }
-}
 
-@media screen and (max-width: 370px){
+@media screen and (max-width: 400px){
   header{
     height: 210px;
   }

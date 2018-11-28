@@ -31,3 +31,9 @@
     color: #320B75;
     font-family: "Proxima", Arial, Helvetica, sans-serif;
 }
+
+@media screen and (max-width: 410px){
+  .footer{
+    justify-content: center;
+  }
+}

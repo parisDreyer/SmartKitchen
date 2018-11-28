@@ -41,29 +41,29 @@ class Dictaphone extends Component {
 
         if(window.location.toString().includes("/search")) {
             if(this.state.renderUtil){
-                const resetButton = (
-                    <div className="reset-speech-input">
-                        <button onClick={resetTranscript}>
-                            Reset
+                const resetButton = <div className="reset-speech-input">
+                    <button onClick={resetTranscript}>
+                      <i class="fa fa-trash" aria-hidden="true" />
                     </button>
-                    </div>
-                );
-                return <div>
+                  </div>;
+                return <div className="speech-options">
                     <div className="render-speech">
                     <button onClick={() => this.switchRenderUtil(false)}>
-                        Text Input
+                            <i className="fas fa-microphone-slash" />
                     </button>
                     </div>
                     {resetButton}
                     <div id="speech-transcript" className="speech-input">{transcript}</div>
                 </div>;
             } else {
-                return <div className="render-speech">
+                return <div className="speech-options">
+                <div className="render-speech">
                     <button onClick={() => this.switchRenderUtil(true)}>
-                    Vocal Input
+                        <i className="fas fa-microphone"></i>
                     </button>
                     <div id="speech-transcript" className="speech-input">
                     {transcript}
+                    </div>
                     </div>
                 </div>;
             }
