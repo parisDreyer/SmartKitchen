@@ -46,13 +46,14 @@
 }
 
 .start{
-  border: 1px solid #0E6ACB;
-  border-radius: 4px;
-  color: #320A75;
-  background: white;
-  font-size: 17px;
-  padding: 5px;
-  font-family: "Proxima", Arial, Helvetica, sans-serif;
+border: 1.5px solid #0E6ACB;
+    border-radius: 4px;
+    color: #320A75;
+    background: white;
+    font-size: 22px;
+    font-weight: 510;
+    padding: 16px;
+    font-family: "Proxima", Arial, Helvetica, sans-serif;
 }
 
 

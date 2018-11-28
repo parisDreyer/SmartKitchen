@@ -5,8 +5,34 @@ import "../../css/footer.css";
 class Footer extends React.Component {
   render() {
     return <div className="footer">
-        <div className="text">Follow us! We're friendly:</div>
         <div className="sm">
+          <div className="text">
+            <i className="fas fa-paper-plane" />
+            Navigation:
+          </div>
+          <a href="/">
+            <i className="fas fa-home" />
+            Home
+          </a>
+          <a href="#/search">
+            <i className="fas fa-search" />
+            Search
+          </a>
+          <a href="#/signup">
+            <i className="fas fa-door-open" />
+            Signup
+          </a>
+          <a href="#/signup">
+            <i className="fas fa-user-alt" />
+            Sign In
+          </a>
+        </div>
+
+        <div className="sm">
+          <div className="text">
+            <i className="fas fa-address-card" />
+            Follow us! We're friendly:
+          </div>
           <a href="https://github.com/AmandaMitchell707">
             <i className="fab fa-github" />
             Amanda Mitchell

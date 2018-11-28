@@ -6,6 +6,7 @@
 .App {
   text-align: center;
   height: 100%;
+  width: 100%;
   position: absolute;
 }
 
@@ -42,5 +43,11 @@ h2.recipe-show { font-size: 1.6rem;}
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 200px){
+  .App {
+    width: auto;
   }
 }

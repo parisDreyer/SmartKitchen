@@ -1,20 +1,29 @@
+
 .footer {
   font-family: Verdana,Geneva,sans-serif;
   color: #1A3343;
   background: white;
   height: 60px;
   width: 100%;
+  display: flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+  justify-content: space-between;
   border-top: 1px solid rgb(202, 201, 201);
 }
 
 .sm {
-  margin-top: 1%;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+
+}
+.sm a {
+  margin: 8px;
 }
 
 .text {
-  padding-top: 5px;
+  margin: 10px;
+    font-weight: 600;
 }
 
 .footer a:hover {
