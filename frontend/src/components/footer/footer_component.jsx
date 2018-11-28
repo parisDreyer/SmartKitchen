@@ -19,17 +19,20 @@ class Footer extends React.Component {
             Search
           </a>
           <a href="#/signup">
-            <i class="fas fa-door-open" />
+            <i className="fas fa-door-open" />
             Signup
           </a>
           <a href="#/signup">
-            <i class="fas fa-user-alt" />
+            <i className="fas fa-user-alt" />
             Sign In
           </a>
         </div>
 
         <div className="sm">
-          <div className="text">Follow us! We're friendly:</div>
+          <div className="text">
+            <i className="fas fa-address-card" />
+            Follow us! We're friendly:
+          </div>
           <a href="https://github.com/AmandaMitchell707">
             <i className="fab fa-github" />
             Amanda Mitchell

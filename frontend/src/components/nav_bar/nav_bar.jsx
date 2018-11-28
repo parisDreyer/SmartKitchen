@@ -4,6 +4,7 @@ import "../../css/nav.css";
 import logo from "../../images/logo3.jpg";
 import { logout } from '../../actions/session_actions';
 import { connect} from 'react-redux';
+import SearchBar from '../search_form/searchbar';
 
 const mapStateToProps = ({ sessions }) => ({
   currentUser: sessions ? sessions.currentUser : false
@@ -30,6 +31,9 @@ class NavBar extends React.Component{
         <Link to="/" className="nav-link2">
           SMART KITCHEN
         </Link>
+      </div>
+      <div className="midpart">
+        <SearchBar/>
       </div>
       <div className="secondpart">
         <div className="nav-link">{opt}</div>

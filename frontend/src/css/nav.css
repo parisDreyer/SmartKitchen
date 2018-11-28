@@ -15,9 +15,9 @@ header {
 
 .logo{
 
- width: 10%;
- height: 100%;
- padding-top: 1px;
+ width: 42px;
+ height: 42px;
+ margin-top: 8px;
 }
 
 .nav-link {
@@ -83,4 +83,15 @@ header {
       width: 50%;
       display: flex;
       justify-content: flex-end;
+}
+
+@media screen and (max-width: 750px){
+  .logo{
+    display: none;
+  }
+}
+@media screen and (max-width: 650px){
+  header{
+    height: 100px;
+  }
 }
