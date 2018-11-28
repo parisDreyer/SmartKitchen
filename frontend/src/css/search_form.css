@@ -7,7 +7,7 @@
 }
 
 .search-form textarea{
-        font-size: 2rem;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -34,6 +34,7 @@ background-color: #0E6ACB;
 .search-bar{
     display: flex;
     margin-top: 16px;
+    margin-bottom: 8px;
 }
 .search-bar input{
         border: 1px solid #0E6ACB;
@@ -53,4 +54,10 @@ background-color: #0E6ACB;
     background: white;
     font-size: 17px;
     padding: 1px;
+}
+
+@media screen and (max-width: 220px){
+    #searchbar-input-field {
+        width: 50%;
+    }
 }

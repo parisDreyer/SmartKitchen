@@ -14,10 +14,7 @@ class SearchBar extends React.Component {
             gotoIndex: false
         };
         this.handleClick = this.handleClick.bind(this);
-        // this.handleVoiceInput = this.handleVoiceInput.bind(this);
-        // this.voiceChangeInputHandle = window.setInterval(() => window.isRenderingSpeechInput && window.speechRecogTranscript != this.state.ingredient ?
-        //     this.handleVoiceInput(window.speechRecogTranscript) : null, 1000);
-    }
+}
 
     handleClick() {
         sessionStorage.clear();
@@ -26,24 +23,16 @@ class SearchBar extends React.Component {
         this.props.processForm(searchStr); // get the recipes from the api
         this.props.backupRecipes(searchStr); // get the extra recipes from our local database
         this.props.saveIngredients(searchCriteria);
-        // window.clearInterval(this.voiceChangeInputHandle);
-        // this.props.history.push('index');
+
         window.location = "#/index"
     }
-
-    // handleVoiceInput(ingredient) {
-    //     this.setState({ ['ingredient']: ingredient });
-    //     const inputfield = document.getElementById("search-input-field");
-    //     inputfield.value = ingredient;
-
-    // }
 
     render() {
 
         const { errors } = this.props;
 
         return <div className="search-bar">
-            <input id="search-input-field" type="text" placeholder="Find a recipe" onChange={e => this.setState(
+            <input id="searchbar-input-field" type="text" placeholder="Find a recipe" onChange={e => this.setState(
                   { ["ingredient"]: e.target.value }
                 )} />
 

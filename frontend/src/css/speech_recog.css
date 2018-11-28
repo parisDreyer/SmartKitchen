@@ -58,7 +58,7 @@
   color: #0E6ACB;
   background: white;
   font-size: 17px;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0.25rem;
   left: 32%;
 }
