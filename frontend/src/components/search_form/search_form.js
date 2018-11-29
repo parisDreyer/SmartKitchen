@@ -11,7 +11,7 @@ class SearchForm extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleVoiceInput = this.handleVoiceInput.bind(this);
     this.voiceChangeInputHandle = window.setInterval(() => window.isRenderingSpeechInput && window.speechRecogTranscript != this.state.ingredient ?
-    this.handleVoiceInput(window.speechRecogTranscript) : null, 1000);
+    this.handleVoiceInput(window.speechRecogTranscript) : null, 500);
   }
 
   handleClick() {
@@ -22,6 +22,12 @@ class SearchForm extends React.Component {
     this.props.backupRecipes(searchStr); // get the extra recipes from our local database
     this.props.saveIngredients(searchCriteria);
     window.clearInterval(this.voiceChangeInputHandle);
+
+
+    // reset the stored state of the speech transcript
+    let trnscrptstate = document.getElementById("switch-render-util-btn");
+    if (window.isRenderingSpeechInput) trnscrptstate.click();
+
     this.props.history.push('index');
   }
 

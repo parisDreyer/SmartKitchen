@@ -26,7 +26,8 @@ class Dictaphone extends Component {
         window.isRenderingSpeechInput = false;
     }
 
-    switchRenderUtil(trueOrFalse){
+    switchRenderUtil(trueOrFalse, resetAction){
+        if (trueOrFalse) resetAction();
         window.isRenderingSpeechInput = trueOrFalse;
         this.setState({ ["renderUtil"]: trueOrFalse });
     }
@@ -39,34 +40,18 @@ class Dictaphone extends Component {
             return null
         }
 
-        if(window.location.toString().includes("/search")) {
-            if(this.state.renderUtil){
-                const resetButton = <div className="reset-speech-input">
-                    <button onClick={resetTranscript}>
-                      <i class="fa fa-trash" aria-hidden="true" />
-                    </button>
-                  </div>;
-                return <div className="speech-options">
-                    <div className="render-speech">
-                    <button onClick={() => this.switchRenderUtil(false)}>
-                            <i className="fas fa-microphone-slash" />
-                    </button>
-                    </div>
-                    {resetButton}
-                    <div id="speech-transcript" className="speech-input">{transcript}</div>
-                </div>;
-            } else {
+        if(window.location.hash === "#/search"){ //.toString().includes("/search")) {
+            const fa = this.state.renderUtil ? <i class="fa fa-square" aria-hidden="true" /> : <i className="fas fa-microphone" />;
                 return <div className="speech-options">
                 <div className="render-speech">
-                    <button onClick={() => this.switchRenderUtil(true)}>
-                        <i className="fas fa-microphone"></i>
-                    </button>
-                    <div id="speech-transcript" className="speech-input">
-                    {transcript}
-                    </div>
+                        <button id="switch-render-util-btn" onClick={() => this.switchRenderUtil(!this.state.renderUtil, resetTranscript)}>
+                            {fa}
+                        </button>
+                        <div id="speech-transcript" className="speech-input">
+                            {transcript}
+                        </div>
                     </div>
                 </div>;
-            }
         } else {
             if (transcript.length > 0) resetTranscript();
             if (this.state.renderUtil) this.setState({["renderUtil"]: false});

@@ -8,8 +8,10 @@ class SearchResultsIndex extends React.Component {
       super(props)
       this.state = {
         recipes: this.props.recipes,
-        ingredients: this.props.ingredients
+        ingredients: this.props.ingredients,
+        hasfoundrecipes: false
       };
+      window.setTimeout(() => this.setState({ ["hasfoundrecipes"]: true}), 2000)
       sessionStorage['canUpdateFromSession'] = true;
     }
     
@@ -90,10 +92,14 @@ class SearchResultsIndex extends React.Component {
               <li>a search with fewer words</li>
               <li>a search with only food words</li>
               <li>
-                If you still don't see it, email us and we'll add the
-                recipe!
+                If you still don't see it, <a href="mailto:slukepdreyer@gmail.com?Subject=NofoodResult%20again" target="_top">
+                  email us and we'll add the recipe!</a>
               </li>
-              <li>lukepdreyer@gmail.com</li>
+              <li>
+                <a href="mailto:slukepdreyer@gmail.com?Subject=NofoodResult%20again" target="_top">
+                  lukepdreyer@gmail.com
+                </a>
+              </li>
             </ul>
           </div>
         </section>;
@@ -104,8 +110,11 @@ class SearchResultsIndex extends React.Component {
 
       let matchedRecipes = this.matchesForRecipes();
 
-      if (matchedRecipes) return this.recipeList(matchedRecipes);
-      else return <section className="recipe-list-page">Fetching recipes!</section>
+      if ((this.state.hasfoundrecipes && matchedRecipes) || (matchedRecipes && matchedRecipes.length > 0))
+        return this.recipeList(matchedRecipes);
+      else return <section className="recipe-list-page">
+            Fetching recipes!
+          </section>;
     }
   }
   
