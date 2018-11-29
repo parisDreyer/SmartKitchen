@@ -6,12 +6,14 @@ import {
   fetchBackupRecipes
 } from "../../actions/recipes_actions";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   const recipes = state.entities.recipes || [];
   const ingredients = state.entities.ingredients;
-  return {
-    recipes: Object.values(recipes),
-    ingredients
+  return { 
+    recipes: Object.values(recipes), 
+    ingredients, 
+    doMatchCheck: ownProps.doMatchCheck != false, 
+    headerText: ownProps.headerText ? ownProps.headerText : "Choose your favorite recipe and get cooking!" 
   };
 };
 

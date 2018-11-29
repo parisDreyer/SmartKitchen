@@ -8,8 +8,11 @@ class SearchResultsIndex extends React.Component {
       super(props)
       this.state = {
         recipes: this.props.recipes,
-        ingredients: this.props.ingredients
+        ingredients: this.props.ingredients,
+        hasfoundrecipes: false,
+        headerText: this.props.headerText
       };
+      window.setTimeout(() => this.setState({ ["hasfoundrecipes"]: true}), 2000)
       sessionStorage['canUpdateFromSession'] = true;
     }
     
@@ -28,29 +31,28 @@ class SearchResultsIndex extends React.Component {
         this.setState({
           ["recipes"]: JSON.parse(sessionStorage["recipe_results"])
         });
-        this.setState({
-          ["ingredients"]: JSON.parse(
-            sessionStorage["recipe_ingredients"]
-          )
-        });
+        if(sessionStorage["recipe_ingredients"])
+          this.setState({
+            ["ingredients"]: JSON.parse(
+              sessionStorage["recipe_ingredients"]
+            )
+          });
       }
     }
-    render() {
 
-      this.readStateFromSessionStorage(this.state.recipes.length === 0 && sessionStorage["recipe_results"]);
-
-
-
+    matchesForRecipes(){
       let matchedRecipes = null;
-
-      if (this.state.recipes) {
+      
+      if (this.state.recipes && this.state.doMatchCheck) {
         matchedRecipes = this.state.recipes.filter(recipe => {
           let matchCount = 0;
           const recipeIngredients = recipe.recipe ? recipe.recipe.ingredients : recipe.ingredients ? recipe.ingredients : [];
 
           this.state.ingredients.forEach(ingredient => {
+            let igrd = ingredient.toLowerCase();
             recipeIngredients.forEach(recipeIngredient => {
-              if (recipeIngredient.text ? recipeIngredient.text.includes(ingredient) : recipeIngredient.includes(ingredient)) {
+              let txt = recipeIngredient.text ? recipeIngredient.text : recipeIngredient ? recipeIngredient : "";
+              if (txt.toLowerCase().includes(igrd)) {
                 matchCount += 1;
               }
             });
@@ -59,28 +61,63 @@ class SearchResultsIndex extends React.Component {
           if (this.state.ingredients.length > 2) {
             // if user input is 3 ingredients or more, recipes will be filtered to show
             // only those for which the user has input at least 60% of the listed ingredients
-            return matchCount / (recipeIngredients.length) >= 0.6;
+            return matchCount / recipeIngredients.length >= 0.6;
           } else {
             // if user input is 1 to 2 ingredients, recipes will be filtered to show
             // only those for which the user has input at least 30% of the listed ingredients
-            return matchCount / (recipeIngredients.length) >= 0.3;
+            return matchCount / recipeIngredients.length >= 0.3;
           }
         });
-      }
-      if (matchedRecipes) {
-        return <section className="recipe-list-page">
+      } else if (this.state.recipes) { matchedRecipes = this.state.recipes; }
+
+      return matchedRecipes;
+    }
+
+    recipeList(matchedRecipes){
+      return matchedRecipes.length > 0 ? <section className="recipe-list-page">
           <h1 className="favorite-recipe">
-            Choose your favorite recipe and get cooking!
+            {this.state.headerText}
           </h1>
           <ul className="recipe-list">
             {matchedRecipes.map((recipe, idx) => (
-              <SearchResultsIndexItem key={idx} recipe={recipe.recipe || recipe} />
+              <SearchResultsIndexItem
+                key={idx}
+                recipe={recipe.recipe || recipe}
+              />
             ))}
           </ul>
+        </section> : <section className="recipe-list-page">
+          <h1 className="favorite-recipe">
+            Looks like your search didn't return any recipes
+          </h1>
+          <div className="search-try-box">
+            Did you try:
+            <ul className="search-try-list">
+              <li>a search with fewer words</li>
+              <li>a search with only food words</li>
+              <li>
+                If you still don't see it, <a href="mailto:slukepdreyer@gmail.com?Subject=NofoodResult%20again" target="_top">
+                  email us and we'll add the recipe!</a>
+              </li>
+              <li>
+                <a href="mailto:slukepdreyer@gmail.com?Subject=NofoodResult%20again" target="_top">
+                  lukepdreyer@gmail.com
+                </a>
+              </li>
+            </ul>
+          </div>
         </section>;
-      } else {
-        return <section className="recipe-list-page">Fetching recipes!</section>
-      }
+    }
+    render() {
+
+      this.readStateFromSessionStorage(this.state.recipes.length === 0 && sessionStorage["recipe_results"]);
+
+      let matchedRecipes = this.matchesForRecipes();
+      if ((this.state.hasfoundrecipes && matchedRecipes) || (matchedRecipes && matchedRecipes.length > 0))
+        return this.recipeList(matchedRecipes);
+      else return <section className="recipe-list-page">
+            Fetching recipes!
+          </section>;
     }
   }
   
