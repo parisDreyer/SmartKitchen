@@ -1,5 +1,6 @@
 import React from "react";
 import isStopWord from "../../util/stop_words";
+import SamplerResIndex from '../recipes/search_results_index_container';
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class SearchForm extends React.Component {
     this.handleVoiceInput = this.handleVoiceInput.bind(this);
     this.voiceChangeInputHandle = window.setInterval(() => window.isRenderingSpeechInput && window.speechRecogTranscript != this.state.ingredient ?
     this.handleVoiceInput(window.speechRecogTranscript) : null, 500);
+    this.props.backupRecipes("mushroom");
   }
 
   handleClick() {
@@ -44,7 +46,7 @@ class SearchForm extends React.Component {
 
     return <div className="search-form">
         <textarea id="search-input-field"
-         type="text" placeholder="ingredient"
+         type="text" placeholder="search by ingredient"
          onChange={e => this.setState({ ["ingredient"]: e.target.value })}
          
         />
@@ -55,6 +57,10 @@ class SearchForm extends React.Component {
 
         <div>
           {errors && errors.length ? <div>{errors.join(" ")}</div> : null}
+        </div>
+
+        <div className="palette-sampler">
+          <SamplerResIndex doMatchCheck={false} headerText={"Trending Recipes"}/>
         </div>
       </div>;
 }

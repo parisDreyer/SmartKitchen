@@ -52,8 +52,8 @@ app.get("/", (req, res) => res.send("Hello World"));
 
 
 app.get('/api/backup', (req, res) => {
-   
-   res.send(JSON.stringify(filteredBackup(req.url)))
+  let food = JSON.stringify(filteredBackup(req.url));
+   res.send(food)
  });
 
 

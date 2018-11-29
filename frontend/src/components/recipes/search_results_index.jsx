@@ -9,7 +9,8 @@ class SearchResultsIndex extends React.Component {
       this.state = {
         recipes: this.props.recipes,
         ingredients: this.props.ingredients,
-        hasfoundrecipes: false
+        hasfoundrecipes: false,
+        headerText: this.props.headerText
       };
       window.setTimeout(() => this.setState({ ["hasfoundrecipes"]: true}), 2000)
       sessionStorage['canUpdateFromSession'] = true;
@@ -30,25 +31,28 @@ class SearchResultsIndex extends React.Component {
         this.setState({
           ["recipes"]: JSON.parse(sessionStorage["recipe_results"])
         });
-        this.setState({
-          ["ingredients"]: JSON.parse(
-            sessionStorage["recipe_ingredients"]
-          )
-        });
+        if(sessionStorage["recipe_ingredients"])
+          this.setState({
+            ["ingredients"]: JSON.parse(
+              sessionStorage["recipe_ingredients"]
+            )
+          });
       }
     }
 
     matchesForRecipes(){
       let matchedRecipes = null;
-
-      if (this.state.recipes) {
+      
+      if (this.state.recipes && this.state.doMatchCheck) {
         matchedRecipes = this.state.recipes.filter(recipe => {
           let matchCount = 0;
           const recipeIngredients = recipe.recipe ? recipe.recipe.ingredients : recipe.ingredients ? recipe.ingredients : [];
 
           this.state.ingredients.forEach(ingredient => {
+            let igrd = ingredient.toLowerCase();
             recipeIngredients.forEach(recipeIngredient => {
-              if (recipeIngredient.text ? recipeIngredient.text.includes(ingredient) : recipeIngredient.includes(ingredient)) {
+              let txt = recipeIngredient.text ? recipeIngredient.text : recipeIngredient ? recipeIngredient : "";
+              if (txt.toLowerCase().includes(igrd)) {
                 matchCount += 1;
               }
             });
@@ -64,7 +68,7 @@ class SearchResultsIndex extends React.Component {
             return matchCount / recipeIngredients.length >= 0.3;
           }
         });
-      }
+      } else if (this.state.recipes) { matchedRecipes = this.state.recipes; }
 
       return matchedRecipes;
     }
@@ -72,7 +76,7 @@ class SearchResultsIndex extends React.Component {
     recipeList(matchedRecipes){
       return matchedRecipes.length > 0 ? <section className="recipe-list-page">
           <h1 className="favorite-recipe">
-            Choose your favorite recipe and get cooking!
+            {this.state.headerText}
           </h1>
           <ul className="recipe-list">
             {matchedRecipes.map((recipe, idx) => (
@@ -109,7 +113,6 @@ class SearchResultsIndex extends React.Component {
       this.readStateFromSessionStorage(this.state.recipes.length === 0 && sessionStorage["recipe_results"]);
 
       let matchedRecipes = this.matchesForRecipes();
-
       if ((this.state.hasfoundrecipes && matchedRecipes) || (matchedRecipes && matchedRecipes.length > 0))
         return this.recipeList(matchedRecipes);
       else return <section className="recipe-list-page">
