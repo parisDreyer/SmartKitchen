@@ -3,13 +3,41 @@
 ## Smart Kitchen
 ### By: Amanda Mitchell, Nathasha Surendran, Chris Yip, Luke Dreyer	
 
-- [SmartKitchen Live](https://smart-kitchen-recipes.herokuapp.com/)
+
+
+### Live: 
+[SmartKitchen Live](https://smart-kitchen-recipes.herokuapp.com/)
+
+
+
+
+## Technologies
+
+* `React`
+* `Redux`
+* `NodeJS`
+* `MongoDB`
+* `ExpressJS` 
+* `CreateReact`
+* `Webkit Speech API`
+* `Babel`
+* `Webpack`
+* `HTML`
+* `CSS`
+* `Edemam Recipe API`
+
+
+
+
+
+
+## Setup
+
 - This README documents the steps necessary to get the
 application up and running.
 - Welcome to Smart Kitchen. Smart Kitchen is a recipe app that suggests what to cook based on what you have.
 
 
-## `Setup`
 
 - git clone the repo with the url:
 https://github.com/parisDreyer/SmartKitchen
