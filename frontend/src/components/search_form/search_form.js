@@ -12,7 +12,7 @@ class SearchForm extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleVoiceInput = this.handleVoiceInput.bind(this);
     this.voiceChangeInputHandle = window.setInterval(() => window.isRenderingSpeechInput && window.speechRecogTranscript != this.state.ingredient ?
-    this.handleVoiceInput(window.speechRecogTranscript) : null, 500);
+      this.handleVoiceInput(window.speechRecogTranscript) : null, 100);
     this.props.backupRecipes("mushroom");
   }
 
@@ -36,7 +36,7 @@ class SearchForm extends React.Component {
   handleVoiceInput(ingredient){
     this.setState({ ['ingredient']: ingredient });
     const inputfield = document.getElementById("search-input-field");
-    inputfield.value = ingredient;
+    if (inputfield) inputfield.value = ingredient;
 
   }
 
