@@ -48,10 +48,10 @@ class SessionForm extends React.Component {
     return <div className="session-form-outer">
         <div className="loginFormContainer">
           <label className="loginlabel">Email:</label>
-          <input type="text" id="email" placeholder="email" onChange={(e) => this.update(e, "email")} />
+          <input type="text" id="email" placeholder="email" onChange={e => this.update(e, "email")} />
 
           <label className="loginlabel">Password:</label>
-        <input type="text" secureTextEntry id="password" placeholder="password" onChange={(e) => this.update(e, 'password')} />
+        <input type="text" securetextentry="true" id="password" placeholder="password" onChange={e => this.update(e, "password")} />
 
           <div className="session-submit">
             <button className="session-button" onClick={this.handleLogin}>
