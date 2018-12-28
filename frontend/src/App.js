@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+// import logo from './logo.svg';
 import './css/reset.css';
 import './css/App.css';
 import { Provider} from 'react-redux';
@@ -17,14 +17,14 @@ import {
   Route,
   Redirect,
   Switch,
-  Link,
+  // Link,
   HashRouter
 } from 'react-router-dom';
 
 import jwt_decode from "jwt-decode";
 import * as APIUtil from "./util/session_api_util";
 import * as SessionActions from "./actions/session_actions";
-import { AuthRoute, ProtectedRoute } from "./util/route_util";
+// import { AuthRoute, ProtectedRoute } from "./util/route_util";
 
 const store = ConfigureStore();
 if (localStorage.jwtToken) {

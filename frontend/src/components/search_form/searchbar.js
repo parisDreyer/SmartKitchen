@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { fetchRecipes, fetchBackupRecipes } from "../../actions/recipes_actions";
 import { saveIngredients } from "../../actions/recipes_actions";
 import isStopWord from "../../util/stop_words";

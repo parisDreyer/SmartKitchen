@@ -46,7 +46,7 @@ class Dictaphone extends Component {
             resetTranscript, 
             browserSupportsSpeechRecognition,
             listening,
-            startListening,
+            // startListening,
             stopListening
         } = this.props;
         window.speechRecogTranscript=transcript;
@@ -56,7 +56,7 @@ class Dictaphone extends Component {
 
         if(window.location.hash === "#/search"){ //.toString().includes("/search")) {
 
-            const fa = this.state.renderUtil ? <i class="fa fa-square" aria-hidden="true" /> : <i className="fas fa-microphone" />;
+            const fa = this.state.renderUtil ? <i className="fa fa-square" aria-hidden="true" /> : <i className="fas fa-microphone" />;
                 return <div className="speech-options">
                 <div className="render-speech">
                         <button id="switch-render-util-btn" onClick={() => this.switchRenderUtil(!this.state.renderUtil, resetTranscript)}>
@@ -68,11 +68,15 @@ class Dictaphone extends Component {
                     </div>
                 </div>;
         } else {
-            if (transcript.length > 0) resetTranscript();
-            if (this.state.renderUtil) this.setState({["renderUtil"]: false});
+            // if (transcript.length > 0) resetTranscript();
+            // if (this.state.renderUtil) this.setRenderUtilToFalse();
             if(listening) stopListening();
             return null;
         }
+    }
+    
+    setRenderUtilToFalse() {
+        this.setState({ ["renderUtil"]: false });
     }
 }
 
